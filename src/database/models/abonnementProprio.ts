@@ -1,11 +1,11 @@
 import { typeAbonnementSalle } from "enum/typeAbonnementSalle";
-import { DataTypes ,Model, Optional, Sequelize } from "sequelize";
+import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 import { typeAbonnementSaas } from "enum/typeAbonnementSaas";
 import { StatutAbonnementEnum } from "enum/statutAbonnementEnum";
 
 export interface AbonnementProprietaireAttributes {
     id: string;
-    proprietaireId:string;
+    proprietaireId: string;
     type: string;
     statut: string;
     description: string;
@@ -15,9 +15,9 @@ export interface AbonnementProprietaireAttributes {
     finAt?: Date;
 }
 
-export interface AbonnementProprietaireCreationAttributes extends Optional<AbonnementProprietaireAttributes,"id"|"debutAt"|"finAt">{}
+export interface AbonnementProprietaireCreationAttributes extends Optional<AbonnementProprietaireAttributes, "id" | "debutAt" | "finAt"> { }
 
-class AbonnementProprietaire extends Model<AbonnementProprietaireAttributes, AbonnementProprietaireCreationAttributes> implements AbonnementProprietaireAttributes{
+class AbonnementProprietaire extends Model<AbonnementProprietaireAttributes, AbonnementProprietaireCreationAttributes> implements AbonnementProprietaireAttributes {
     declare id: string;
     declare proprietaireId: string;
     declare type: typeAbonnementSaas;
@@ -31,60 +31,60 @@ class AbonnementProprietaire extends Model<AbonnementProprietaireAttributes, Abo
 
 }
 
-const initModelAbonnementProprietaire = (sequelize:Sequelize)=>{
+const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
     AbonnementProprietaire.init(
         {
-            id:{
-                type:DataTypes.UUID,
-                defaultValue:DataTypes.UUIDV4,
-                primaryKey:true
+            id: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                primaryKey: true
             },
-            proprietaireId:{
+            proprietaireId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'Proprietaire_id',
+                field: 'proprietaireId',
                 references: {
-                    model: 'Proprietaires',
+                    model: 'proprietaires',
                     key: 'id',
-                }    
+                }
             },
-            type:{
-                type:DataTypes.ENUM,
-                allowNull:false
+            type: {
+                type: DataTypes.ENUM(...Object.values(typeAbonnementSaas)),
+                allowNull: false
             },
-            statut:{
-                type:DataTypes.ENUM,
-                allowNull:false
+            statut: {
+                type: DataTypes.ENUM(...Object.values(StatutAbonnementEnum)),
+                allowNull: false
             },
-            description:{
-                type:DataTypes.STRING,
-                allowNull:false
+            description: {
+                type: DataTypes.STRING,
+                allowNull: false
             },
             nbre_sceance: {
                 type: DataTypes.STRING,
-                allowNull:false
+                allowNull: false
             },
-            montant:{
-                type:DataTypes.STRING,
-                allowNull:false
+            montant: {
+                type: DataTypes.STRING,
+                allowNull: false
             }
         },
         {
-            sequelize, 
-            modelName: "AbonnementProprietaire", 
-            tableName: 'AbonnementProprietaires', 
-            timestamps: true, 
-            underscored: true, 
+            sequelize,
+            modelName: "AbonnementProprietaire",
+            tableName: 'abonnementProprietaires',
+            timestamps: true,
+            underscored: true,
             paranoid: true,
         }
     )
 }
 
 AbonnementProprietaire.associate = (models: any) => {
-  AbonnementProprietaire.belongsTo(models.Proprietaire, {foreignKey: 'ProprietaireId', as: 'proprietaire'});
-  AbonnementProprietaire.hasOne(models.Facture, {foreignKey: 'factureId', as: 'clfactureient'});
+    AbonnementProprietaire.belongsTo(models.Proprietaire, { foreignKey: 'ProprietaireId', as: 'proprietaires' });
+    AbonnementProprietaire.hasOne(models.Facture, { foreignKey: 'factureId', as: 'factures' });
 }
 
-export {AbonnementProprietaire,initModelAbonnementProprietaire};
+export { AbonnementProprietaire, initModelAbonnementProprietaire };
 
 

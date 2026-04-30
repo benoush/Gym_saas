@@ -42,9 +42,9 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
             clientId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'client_id',
+                field: 'clientId',
                 references: {
-                    model: 'Client',
+                    model: 'clients',
                     key: 'id',
                 }
             },
@@ -72,7 +72,7 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
         {
             sequelize,
             modelName: "AbonnementClient",
-            tableName: 'AbonnementClients',
+            tableName: 'abonnementClients',
             timestamps: true,
             underscored: true,
             paranoid: true,
@@ -82,7 +82,7 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
 
 AbonnementClient.associate = (models: any) => {
     AbonnementClient.belongsTo(models.Client, { foreignKey: 'clientId', as: 'clients' });
-    //AbonnementClient.hasMany(models.Facture, { foreignKey: 'factureId', as: 'facture' });
+    AbonnementClient.hasMany(models.Facture, { foreignKey: 'factureId', as: 'factures' });
 }
 
 export { AbonnementClient, initModelAbonnementClient };

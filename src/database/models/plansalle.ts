@@ -2,29 +2,29 @@ import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
 
 export interface PlanSalleAttributes {
-    id: string;
-    salleId: string;
-    type: string;
-    prix: number;
-    description: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deleteAt?: Date
+  id: string;
+  salleId: string;
+  type: string;
+  prix: number;
+  description: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deleteAt?: Date
 }
 
-export interface PlanSalleCreationAttributes extends Optional<PlanSalleAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
+export interface PlanSalleCreationAttributes extends Optional<PlanSalleAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
-export class PlanSalle extends Model<PlanSalleAttributes, PlanSalleCreationAttributes> implements PlanSalleAttributes{
-    declare id: string;
-    declare salleId: string;
-    declare type: string;
-    declare prix: number;
-    declare description: string;
-    declare createdAt: Date;
-    declare updatedAt: Date;
-    declare deleteAt: Date;
-    declare static associate: (models: any) => void;
+export class PlanSalle extends Model<PlanSalleAttributes, PlanSalleCreationAttributes> implements PlanSalleAttributes {
+  declare id: string;
+  declare salleId: string;
+  declare type: string;
+  declare prix: number;
+  declare description: string;
+  declare createdAt: Date;
+  declare updatedAt: Date;
+  declare deleteAt: Date;
+  declare static associate: (models: any) => void;
 
 }
 
@@ -33,17 +33,17 @@ export const initModelPlanSalle = (sequelize: Sequelize) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue:DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      salleId:{
-                type: DataTypes.UUID,
-                allowNull: false,
-                field: 'salle_id',
-                references: {
-                    model: 'Salle',
-                    key: 'id',
-                }    
+      salleId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        field: 'salleId',
+        references: {
+          model: 'salles',
+          key: 'id',
+        }
       },
       type: {
         type: DataTypes.STRING,
@@ -73,5 +73,5 @@ export const initModelPlanSalle = (sequelize: Sequelize) => {
 };
 
 PlanSalle.associate = (models: any) => {
-  PlanSalle.belongsTo(models.Salle, {foreignKey: 'sallId', as: 'salle'});
+  PlanSalle.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salles' });
 }

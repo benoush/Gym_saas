@@ -1,4 +1,4 @@
-import { DataTypes ,Model, Optional, Sequelize } from "sequelize";
+import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 
 export interface SalleAttributes {
     id: string;
@@ -10,39 +10,39 @@ export interface SalleAttributes {
     deleteAt?: Date;
 }
 
-export interface SalleCreationAttributes extends Optional<SalleAttributes,"id"|"createdAt"|"deleteAt">{}
+export interface SalleCreationAttributes extends Optional<SalleAttributes, "id" | "createdAt" | "deleteAt"> { }
 
-class Salle extends Model<SalleAttributes, SalleCreationAttributes> implements SalleAttributes{
+class Salle extends Model<SalleAttributes, SalleCreationAttributes> implements SalleAttributes {
     declare id: string;
     declare nom: string;
     declare contact: string;
     declare adresse: string
     declare horaire: string;
-    declare readonly createdAt?: Date ;
-    declare readonly deleteAt?: Date ;
+    declare readonly createdAt?: Date;
+    declare readonly deleteAt?: Date;
 
-    //declare static associate: (models: any) => void;
+    declare static associate: (models: any) => void;
 }
 
-const initModelSalle = (sequelize:Sequelize)=>{
+const initModelSalle = (sequelize: Sequelize) => {
     Salle.init(
         {
-            id:{
-                type:DataTypes.UUID,
-                defaultValue:DataTypes.UUIDV4,
-                primaryKey:true
+            id: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                primaryKey: true
             },
-            nom:{
-                type:DataTypes.STRING,
-                allowNull:false
+            nom: {
+                type: DataTypes.STRING,
+                allowNull: false
             },
-            contact:{
-                type:DataTypes.STRING,
-                allowNull:false
+            contact: {
+                type: DataTypes.STRING,
+                allowNull: false
             },
-            adresse:{
-                type:DataTypes.STRING,
-                allowNull:false
+            adresse: {
+                type: DataTypes.STRING,
+                allowNull: false
             },
             horaire: {
                 type: DataTypes.STRING,
@@ -50,23 +50,24 @@ const initModelSalle = (sequelize:Sequelize)=>{
             }
         },
         {
-            sequelize, 
-            modelName: "Salle", 
-            tableName: 'salles', 
-            timestamps: true, 
-            underscored: true, 
+            sequelize,
+            modelName: "Salle",
+            tableName: 'salles',
+            timestamps: true,
+            underscored: true,
             paranoid: true,
         }
     )
 }
 
 
-// Salle.associate = (models: any) => {
-//   Salle.hasOne(models.Staff, {foreignKey: 'staffId', as: 'staff'});
-//   Salle.hasOne(models.Facture, {foreignKey: 'factureId', as: 'facture'});
-//   Salle.hasOne(models.PlanSalle, {foreignKey: 'planSalleId', as: 'planSalle'});
-// }
+Salle.associate = (models: any) => {
+    Salle.hasOne(models.Staff, { foreignKey: 'staffId', as: 'staffs' });
+    Salle.hasOne(models.Facture, { foreignKey: 'factureId', as: 'factures' });
+    Salle.hasOne(models.PlanSalle, { foreignKey: 'planSalleId', as: 'planSalles' });
+    Salle.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
+}
 
-export {Salle,initModelSalle};
+export { Salle, initModelSalle };
 
 

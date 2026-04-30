@@ -2,29 +2,29 @@ import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
 
 export interface ProprietaireAttributes {
-    id: string;
-    userId: string;
-    recto_carte_identite: string;
-    verso_carte_identite: string;
-    doc_justificatif: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deleteAt?: Date
+  id: string;
+  userId: string;
+  recto_carte_identite: string;
+  verso_carte_identite: string;
+  doc_justificatif: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deleteAt?: Date
 }
 
-export interface ProprietaireCreationAttributes extends Optional<ProprietaireAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
+export interface ProprietaireCreationAttributes extends Optional<ProprietaireAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
-export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireAttributes> implements ProprietaireAttributes{
-    declare id: string;
-    declare userId: string;
-    declare recto_carte_identite: string;
-    declare verso_carte_identite: string;
-    declare doc_justificatif: string;
-    declare createdAt: Date;
-    declare updatedAt: Date;
-    declare deleteAt: Date;
-    declare static associate: (models: any) => void;
+export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireAttributes> implements ProprietaireAttributes {
+  declare id: string;
+  declare userId: string;
+  declare recto_carte_identite: string;
+  declare verso_carte_identite: string;
+  declare doc_justificatif: string;
+  declare createdAt: Date;
+  declare updatedAt: Date;
+  declare deleteAt: Date;
+  declare static associate: (models: any) => void;
 
 }
 
@@ -33,17 +33,17 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue:DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      userId:{
-                type: DataTypes.UUID,
-                allowNull: false,
-                field: 'user_id',
-                references: {
-                    model: 'User',
-                    key: 'id',
-                }    
+      userId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        field: 'userId',
+        references: {
+          model: 'users',
+          key: 'id',
+        }
       },
       recto_carte_identite: {
         type: DataTypes.STRING,
@@ -64,7 +64,7 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
     {
       sequelize,
       modelName: "Prorietaire",
-      tableName: "prorietaires",
+      tableName: "proprietaires",
       timestamps: true,
       underscored: true,
       paranoid: true,
@@ -73,7 +73,7 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
 };
 
 Proprietaire.associate = (models: any) => {
-  Proprietaire.hasOne(models.Facture, { foreignKey: 'factureId', as: 'facture' });
-  Proprietaire.hasOne(models.Salle, { foreignKey: 'salleId', as: 'salle' });
-  Proprietaire.belongsTo(models.User, {foreignKey: 'userId', as: 'user'});
+  Proprietaire.hasMany(models.Facture, { foreignKey: 'proprietaireId', as: 'factures' });
+  Proprietaire.hasMany(models.Salle, { foreignKey: 'proprietaireId', as: 'salles' });
+  Proprietaire.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
 }

@@ -42,7 +42,7 @@ const syncDatabase = async (force: boolean = false, alter: boolean = true) => {
   }
 
   try {
-    await sequelize.sync({ force:true,});
+    await sequelize.sync({ force: true, });
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Unable to synchronize the database:", error);
@@ -63,14 +63,14 @@ const initModels = async () => {
   initModelUser(sequelize)
   initModelClient(sequelize)
   initModelAbonnementClient(sequelize)
-  // initModelAbonnementProprietaire(sequelize)
-  // initModelProprietaire(sequelize)
-  // initModelPlanSalle(sequelize)
-  // initModelPlanSaas(sequelize)
-  // initModelFacture(sequelize)
+  initModelAbonnementProprietaire(sequelize)
+  initModelProprietaire(sequelize)
+  initModelPlanSalle(sequelize)
+  initModelPlanSaas(sequelize)
+  initModelFacture(sequelize)
   initModelNotif(sequelize)
   initModelPaiement(sequelize)
-  // initModelSalle(sequelize)
+  initModelSalle(sequelize)
   initModelStaff(sequelize)
 
 

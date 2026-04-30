@@ -2,23 +2,23 @@ import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
 
 export interface ClientAttributes {
-    id: string;
-    userId: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deleteAt?: Date
+  id: string;
+  userId: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deleteAt?: Date
 }
 
-export interface ClientCreationAttributes extends Optional<ClientAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
+export interface ClientCreationAttributes extends Optional<ClientAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
-class Client extends Model<ClientAttributes, ClientCreationAttributes> implements ClientAttributes{
-    declare id: string;
-    declare userId: string;
-    declare createdAt: Date;
-    declare updatedAt: Date;
-    declare deleteAt: Date;
-    declare static associate: (models: any) => void;
+class Client extends Model<ClientAttributes, ClientCreationAttributes> implements ClientAttributes {
+  declare id: string;
+  declare userId: string;
+  declare createdAt: Date;
+  declare updatedAt: Date;
+  declare deleteAt: Date;
+  declare static associate: (models: any) => void;
 
 }
 
@@ -27,17 +27,17 @@ const initModelClient = (sequelize: Sequelize) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue:DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      userId:{
-                type: DataTypes.UUID,
-                allowNull: false,
-                field: 'user_id',
-                references: {
-                    model: 'users',
-                    key: 'id',
-                }    
+      userId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        field: 'userId',
+        references: {
+          model: 'users',
+          key: 'id',
+        }
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
@@ -55,8 +55,8 @@ const initModelClient = (sequelize: Sequelize) => {
 };
 
 Client.associate = (models: any) => {
-  Client.hasOne(models.AbonnementClient, { foreignKey: 'AbonnementClientId', as: 'AbonnementClient' });
-  Client.belongsTo(models.User, {foreignKey: 'userId', as: 'user'});
+  Client.hasOne(models.AbonnementClient, { foreignKey: 'clientId', as: 'abonnementClients' });
+  Client.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
 }
 
-export{Client,initModelClient}
+export { Client, initModelClient }

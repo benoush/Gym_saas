@@ -1,40 +1,40 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
-import {RoleEnum} from "../../enum/roleEnum"
+import { RoleEnum } from "../../enum/roleEnum"
 
 export interface UserAttributes {
-    id: string;
-    photo: string;
-    nom: string;
-    prenom: string;
-    email: string;
-    tel: string;
-    sexe: string;
-    password: string;
-    role: string;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deleteAt?: Date
+  id: string;
+  photo: string;
+  nom: string;
+  prenom: string;
+  email: string;
+  tel: string;
+  sexe: string;
+  password: string;
+  role: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deleteAt?: Date
 }
 
-export interface UserCreationAttributes extends Optional<UserAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
+export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
-class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes{
-    declare id: string;
-    declare photo: string;
-    declare nom: string;
-    declare prenom: string;
-    declare email: string;
-    declare tel: string;
-    declare sexe: string;
-    declare password: string;
-    declare role: RoleEnum;
-    declare createdAt: Date;
-    declare updatedAt: Date;
-    declare deleteAt: Date;
+class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+  declare id: string;
+  declare photo: string;
+  declare nom: string;
+  declare prenom: string;
+  declare email: string;
+  declare tel: string;
+  declare sexe: string;
+  declare password: string;
+  declare role: RoleEnum;
+  declare createdAt: Date;
+  declare updatedAt: Date;
+  declare deleteAt: Date;
 
-    // declare static associate: (models: any) => void;
+  declare static associate: (models: any) => void;
 
 }
 
@@ -43,7 +43,7 @@ const initModelUser = (sequelize: Sequelize) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue:DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
       photo: {
@@ -95,11 +95,11 @@ const initModelUser = (sequelize: Sequelize) => {
   );
 };
 
-// User.associate = (models: any) => {
-//   User.hasOne(models.Proprietaire, {foreignKey: 'proprioId', as: 'proprietaire'});
-//   User.hasOne(models.Client, {foreignKey: 'clientId', as: 'client'});
-//   User.hasOne(models.Staff, {foreignKey: 'staffId', as: 'staff'});
-//   User.hasMany(models.Notif, {foreignKey: 'notifId', as: 'notif'});
-// }
+User.associate = (models: any) => {
+  User.hasOne(models.Proprietaire, { foreignKey: 'proprioId', as: 'proprietaires' });
+  User.hasOne(models.Client, { foreignKey: 'clientId', as: 'clients' });
+  User.hasOne(models.Staff, { foreignKey: 'staffId', as: 'staffs' });
+  User.hasMany(models.Notif, { foreignKey: 'notifId', as: 'notifications' });
+}
 
-export{User,initModelUser}
+export { User, initModelUser }

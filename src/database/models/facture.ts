@@ -1,110 +1,111 @@
-import { DataTypes ,Model, Optional, Sequelize } from "sequelize";
+import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 
 export interface FactureAttributes {
     id: string;
-    clientId:string;
-    proprioId:string;
-    Abonnement_clientId:string;
-    Abonnement_proprioId:string;
-    salleId:string;
+    clientId: string;
+    proprietaireId: string;
+    AbonnementClientId: string;
+    AbonnementProprietaireId: string;
+    salleId: string;
     montant: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
 
-export interface FactureCreationAttributes extends Optional<FactureAttributes,"id"|"createdAt"|"updatedAt">{}
+export interface FactureCreationAttributes extends Optional<FactureAttributes, "id" | "createdAt" | "updatedAt"> { }
 
-class Facture extends Model<FactureAttributes, FactureCreationAttributes> implements FactureAttributes{
-    declare id:string;
-    declare clientId:string;
-    declare proprioId:string;
-    declare salleId:string;
-    declare Abonnement_clientId:string;
-    declare Abonnement_proprioId:string;
-    declare montant:string;
-    declare readonly createdAt?: Date ;
-    declare readonly updatedAt?: Date ;
+class Facture extends Model<FactureAttributes, FactureCreationAttributes> implements FactureAttributes {
+    declare id: string;
+    declare clientId: string;
+    declare proprietaireId: string;
+    declare salleId: string;
+    declare AbonnementClientId: string;
+    declare AbonnementProprietaireId: string;
+    declare montant: string;
+    declare readonly createdAt?: Date;
+    declare readonly updatedAt?: Date;
     declare static associate: (models: any) => void;
 }
 
-const initModelFacture = (sequelize:Sequelize)=>{
+const initModelFacture = (sequelize: Sequelize) => {
     Facture.init(
         {
-            id:{
-                type:DataTypes.UUID,
-                defaultValue:DataTypes.UUIDV4,
-                primaryKey:true
+            id: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                primaryKey: true
             },
-            clientId:{
+            clientId: {
                 type: DataTypes.UUID,
                 allowNull: false,
                 field: 'client_id',
                 references: {
-                    model: 'Client',
+                    model: 'clients',
                     key: 'id',
-                }    
+                }
             },
-            proprioId:{
+            proprietaireId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'proprio_id',
+                field: 'proprietaireId',
                 references: {
-                    model: 'Proprietaire',
+                    model: 'proprietaires',
                     key: 'id',
-                }    
+                }
             },
-            salleId:{
+            salleId: {
                 type: DataTypes.UUID,
                 allowNull: false,
                 field: 'salle_id',
                 references: {
-                    model: 'Salle',
+                    model: 'salles',
                     key: 'id',
-                }    
+                }
             },
-            Abonnement_clientId:{
+            AbonnementClientId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'Abonnement_client_id',
+                field: 'AbonnementClientId',
                 references: {
-                    model: 'abonnement_client',
+                    model: 'abonnementClients',
                     key: 'id',
-                }    
+                }
             },
-            Abonnement_proprioId:{
+            AbonnementProprietaireId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'abon_proprio_id',
+                field: 'AbonnementProprietaireId',
                 references: {
-                    model: 'abonnement_proprio',
+                    model: 'abonnementProprietaires',
                     key: 'id',
-                }    
+                }
             },
-            montant:{
-                type:DataTypes.STRING,
-                allowNull:false
+            montant: {
+                type: DataTypes.STRING,
+                allowNull: false
             }
         },
         {
-            sequelize, 
-            modelName: "Facture", 
-            tableName: 'factures', 
-            timestamps: true, 
-            underscored: true, 
+            sequelize,
+            modelName: "Facture",
+            tableName: 'factures',
+            timestamps: true,
+            underscored: true,
             paranoid: true,
         }
     )
 }
 
 Facture.associate = (models: any) => {
-    Facture.belongsTo(models.Client, { foreignKey: 'clientId', as: 'user' });
-    Facture.belongsTo(models.Proprietaire, { foreignKey: 'proprioId', as: 'user' });
-    Facture.belongsTo(models.AbonClient, { foreignKey: 'abonClientId', as: 'user' });
-    Facture.belongsTo(models.AbonProprio, { foreignKey: 'abonProproId', as: 'abon' });
-    Facture.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salle' });
+    Facture.belongsTo(models.Client, { foreignKey: 'clientId', as: 'clients' });
+    Facture.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
+    Facture.belongsTo(models.AbonnementClient, { foreignKey: 'abonnementClientId', as: 'abonnementClients' });
+    Facture.belongsTo(models.AbonnementProprietaire, { foreignKey: 'abonnementProprietaireId', as: 'abonnementProprietaires' });
+    Facture.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salles' });
+    Facture.hasMany(models.Paiement, { foreignKey: 'factureId', as: 'paiements' });
 
 };
 
-export {Facture,initModelFacture};
+export { Facture, initModelFacture };
 
 
