@@ -11,9 +11,9 @@ const options: Options = {
     logging:
         env.NODE_ENV === "development"
             ? (msg) => {
-                console.log(`[SQL ]- ${new Date().toISOString()}  ${msg}`);
+                console.log(`[SQL ]- ${new Date().toISOString()}  ${msg}\n\n`);
             }
-            : true,
+            : false,
     dialect: "postgres",
 };
 

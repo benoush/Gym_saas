@@ -1,6 +1,18 @@
 import { Sequelize } from "sequelize";
 import options from "../config/database";
 import env from "../config/env";
+import { initModelAbonnementClient } from "./models/abonnementClient";
+import { initModelAbonnementProprietaire } from "./models/abonnementProprio";
+import { initModelClient } from "./models/client";
+import { initModelProprietaire } from "./models/proprietaire";
+import { initModelPlanSalle } from "./models/plansalle";
+import { initModelPlanSaas } from "./models/plansaas";
+import { initModelFacture } from "./models/facture";
+import { initModelNotif } from "./models/notification";
+import { initModelPaiement } from "./models/paiement";
+import { initModelSalle } from "./models/salle";
+import { initModelStaff } from "./models/staff";
+import { initModelUser } from "./models/user";
 
 
 
@@ -30,7 +42,7 @@ const syncDatabase = async (force: boolean = false, alter: boolean = true) => {
   }
 
   try {
-    await sequelize.sync({ force, alter });
+    await sequelize.sync({ force:true,});
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Unable to synchronize the database:", error);
@@ -47,18 +59,26 @@ const closeConnection = async () => {
 };
 
 const initModels = async () => {
-/*
-initModelArticles(sequelize)
 
-initModelTodo(sequelize)
+  initModelUser(sequelize)
+  initModelClient(sequelize)
+  initModelAbonnementClient(sequelize)
+  // initModelAbonnementProprietaire(sequelize)
+  // initModelProprietaire(sequelize)
+  // initModelPlanSalle(sequelize)
+  // initModelPlanSaas(sequelize)
+  // initModelFacture(sequelize)
+  initModelNotif(sequelize)
+  initModelPaiement(sequelize)
+  // initModelSalle(sequelize)
+  initModelStaff(sequelize)
 
-initModelAuth(sequelize)
-*/
-Object.values(sequelize.models).forEach((model: any) => {
+
+  Object.values(sequelize.models).forEach((model: any) => {
     if (typeof model.associate === "function") {
       model.associate(sequelize.models);
     }
-})
+  })
 
 };
 
@@ -67,3 +87,5 @@ initModels()
   .catch((error) => console.error("Unable to initialize models:", error));
 
 export { sequelize, testConnection, syncDatabase, closeConnection, initModels };
+
+

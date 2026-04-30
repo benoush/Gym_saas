@@ -3,6 +3,8 @@ import env from "config/env";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "swagger";
+import {notFoundHandler,errorHandler} from "modules/middleware/error.middleware"
+
 
 
 const app: Express = express();
@@ -52,13 +54,13 @@ app.use(`${API_PREFIX}/user`, userRoute)
 */
 
 
-/*
+
 // 404 handler
 app.use(notFoundHandler);
 
 // Global error handler
 app.use(errorHandler);
-*/
+
 
 
 export default app;
