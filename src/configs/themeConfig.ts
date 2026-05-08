@@ -56,7 +56,7 @@ export type Config = {
 const themeConfig: Config = {
   templateName: 'Gerald Gym',
   homePageUrl: '/tableaudebord',
-  settingsCookieName: 'vuexy-mui-next-demo-1',
+  settingsCookieName: 'Gerald Gym',
   mode: 'system', // 'system', 'light', 'dark'
   skin: 'default', // 'default', 'bordered'
   semiDark: false, // true, false
