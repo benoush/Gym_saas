@@ -1,11 +1,16 @@
-import PageTableauDeBord from "@/views/gerald-gym/PageTableauDeBord"
+import PageTableauDeBord from "@/views/gerald-gym-pages/PageTableauDeBord"
+import { Grid } from "@mui/material"
 
 const TableauDeBord
  = () => {
   return (
-    <div>
-      PageTableauDeBord
-    </div>
+    <Grid container spacing={6}>
+
+      <Grid size={{ xs: 12 }}>
+        <PageTableauDeBord />
+      </Grid>
+
+    </Grid>
   )
 }
 
