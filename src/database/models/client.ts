@@ -1,19 +1,22 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
+import { statutClient } from "../../enum/statutClient";
 
 export interface ClientAttributes {
   id: string;
   userId: string;
+  statut: statutClient;
   createdAt?: Date;
   updatedAt?: Date;
   deleteAt?: Date
 }
 
-export interface ClientCreationAttributes extends Optional<ClientAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
+export interface ClientCreationAttributes extends Optional<ClientAttributes, "id" | "statut" |"createdAt" | "updatedAt" | "deleteAt"> { }
 
 
 class Client extends Model<ClientAttributes, ClientCreationAttributes> implements ClientAttributes {
   declare id: string;
+  declare statut: statutClient;
   declare userId: string;
   declare createdAt: Date;
   declare updatedAt: Date;
@@ -38,6 +41,11 @@ const initModelClient = (sequelize: Sequelize) => {
           model: 'users',
           key: 'id',
         }
+      },
+      statut: {
+        type: DataTypes.ENUM(...Object.values(statutClient)),
+        allowNull: false,
+        defaultValue: statutClient.Actif
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,

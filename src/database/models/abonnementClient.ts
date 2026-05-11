@@ -6,11 +6,11 @@ import { StatutAbonnementEnum } from "../../enum/statutAbonnementEnum"
 export interface AbonnementClientAttributes {
     id: string;
     clientId: string
-    type: string;
-    statut: string;
+    type: typeAbonnementSalle;
+    statut: StatutAbonnementEnum;
     description: string;
-    nbre_sceance: string;
-    montant: string;
+    nbre_sceance: number;
+    montant: number;
     debutAt?: Date;
     finAt?: Date;
 }
@@ -23,8 +23,8 @@ class AbonnementClient extends Model<AbonnementClientAttributes, AbonnementClien
     declare type: typeAbonnementSalle;
     declare statut: StatutAbonnementEnum;
     declare description: string;
-    declare nbre_sceance: string;
-    declare montant: string;
+    declare nbre_sceance: number;
+    declare montant: number;
     declare readonly debutAt?: Date;
     declare readonly finAt?: Date;
     declare static associate: (models: any) => void;
@@ -61,11 +61,11 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
                 allowNull: false
             },
             nbre_sceance: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             montant: {
-                type: DataTypes.STRING,
+                type: DataTypes.INTEGER,
                 allowNull: false
             }
         },

@@ -4,7 +4,13 @@ import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "swagger";
 import {notFoundHandler,errorHandler} from "modules/middleware/error.middleware"
-
+import proprietaireRoute from "modules/proprietaire/proprietaireRoute";
+import userRoute from "modules/user/userRoute";
+import salleRoute from "modules/salle/salleRoute";
+import staffRoute from "modules/staff/staffRoute";
+import clientRoute from "modules/client/clientRoute";
+import abonnementProprietaireRoute from "modules/abonnementProprietaire/abonnementProprietaireRoute";
+import abonnementClientRoute from "modules/abonnementClient/abonnementClientRoute";
 
 
 const app: Express = express();
@@ -46,14 +52,15 @@ app.get(`${API_PREFIX}/health`, (req: Request, res: Response) => {
         environment: env.NODE_ENV,
     });
 });
-/*
-app.use(`${API_PREFIX}/article`, articleroute)
-app.use(`${API_PREFIX}/todo`, todoroute)
-app.use(`${env.API_PREFIX}/auth`, authRoutes);
+
+
+app.use(`${API_PREFIX}/proprietaire`, proprietaireRoute)
 app.use(`${API_PREFIX}/user`, userRoute)
-*/
-
-
+app.use(`${API_PREFIX}/salle`, salleRoute)
+app.use(`${API_PREFIX}/staff`, staffRoute)
+app.use(`${API_PREFIX}/client`, clientRoute)
+app.use(`${API_PREFIX}/abonnementProprietaire`, abonnementProprietaireRoute)
+app.use(`${API_PREFIX}/abonnementClient`, abonnementClientRoute)
 
 // 404 handler
 app.use(notFoundHandler);

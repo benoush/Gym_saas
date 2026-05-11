@@ -1,5 +1,6 @@
-export enum StatutAbonnementEnum { 
-    SUSPENDU="SUSPENDU",
-    Actif="Actif",
-    Resilie="Resilie"
+export enum StatutAbonnementEnum {
+    SUSPENDU = "SUSPENDU",
+    ACTIF = "ACTIF",
+    RESILIE = "RESILIE",
+    EXPIRE = "EXPIRE",
 }

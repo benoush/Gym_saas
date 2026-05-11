@@ -1,6 +1,6 @@
 export enum RoleEnum{
     ADMIN="ADMIN",
-    Client="Client",
-    Proprietaire="Proprietaire",
-    Staff="Staff"
+    CLIENT="CLIENT",
+    PROPRIETAIRE="PROPRIETAIRE",
+    STAFF="STAFF"
 }

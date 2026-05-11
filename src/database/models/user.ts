@@ -11,13 +11,13 @@ export interface UserAttributes {
   tel: string;
   sexe: string;
   password: string;
-  role: string;
+  role: RoleEnum;
   createdAt?: Date;
   updatedAt?: Date;
-  deleteAt?: Date
+  deletedAt?: Date
 }
 
-export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
+export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt"> { }
 
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
@@ -32,7 +32,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
   declare role: RoleEnum;
   declare createdAt: Date;
   declare updatedAt: Date;
-  declare deleteAt: Date;
+  declare deletedAt: Date;
 
   declare static associate: (models: any) => void;
 
@@ -47,8 +47,8 @@ const initModelUser = (sequelize: Sequelize) => {
         primaryKey: true,
       },
       photo: {
-        type: DataTypes.UUID,
-        allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: true,
       },
       nom: {
         type: DataTypes.STRING,
@@ -82,7 +82,7 @@ const initModelUser = (sequelize: Sequelize) => {
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
-      deleteAt: DataTypes.DATE
+      deletedAt: DataTypes.DATE
     },
     {
       sequelize,

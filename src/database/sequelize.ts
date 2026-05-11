@@ -2,9 +2,9 @@ import { Sequelize } from "sequelize";
 import options from "../config/database";
 import env from "../config/env";
 import { initModelAbonnementClient } from "./models/abonnementClient";
-import { initModelAbonnementProprietaire } from "./models/abonnementProprio";
+import { initModelAbonnementProprietaire } from "./models/abonnementProprietaire";
 import { initModelClient } from "./models/client";
-import { initModelProprietaire } from "./models/proprietaire";
+import { initModelProprietaire, Proprietaire } from "./models/proprietaire";
 import { initModelPlanSalle } from "./models/plansalle";
 import { initModelPlanSaas } from "./models/plansaas";
 import { initModelFacture } from "./models/facture";
@@ -12,7 +12,7 @@ import { initModelNotif } from "./models/notification";
 import { initModelPaiement } from "./models/paiement";
 import { initModelSalle } from "./models/salle";
 import { initModelStaff } from "./models/staff";
-import { initModelUser } from "./models/user";
+import { initModelUser, User } from "./models/user";
 
 
 
@@ -42,7 +42,7 @@ const syncDatabase = async (force: boolean = false, alter: boolean = true) => {
   }
 
   try {
-    await sequelize.sync({ force: true, });
+    await sequelize.sync({ force, alter });
     console.log("Database synchronized successfully.");
   } catch (error) {
     console.error("Unable to synchronize the database:", error);
@@ -85,6 +85,10 @@ const initModels = async () => {
 initModels()
   .then(() => console.log("Models initialized successfully."))
   .catch((error) => console.error("Unable to initialize models:", error));
+
+  // associations
+User.hasMany(Proprietaire, { foreignKey: "userId" });
+Proprietaire.belongsTo(User, { foreignKey: "userId" });
 
 export { sequelize, testConnection, syncDatabase, closeConnection, initModels };
 

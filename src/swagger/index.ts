@@ -1,9 +1,21 @@
 import env from "../config/env";
 import { OpenAPIV3 } from "openapi-types";
-
+import { proprietairePath, proprietaireSchema, proprietaireTags } from "./proprietaire.swagger";
+import { userPath, userSchema, userTags } from "./user.swagger";
+import { sallePath, salleSchema, salleTags } from "./salle.swagger";
+import { staffPath, staffSchema, staffTags } from "./staff.swagger";
+import { clientPath, clientSchema, clientTags } from "./client.swagger";
+import { abonnementClientPath, abonnementClientSchema, abonnementClientTags } from "./abonnementClient.swagger";
+import { abonnementProprietairePath, abonnementProprietaireSchema, abonnementProprietaireTags } from "./abonnementProprietaire.swagger";
 
 export const tags: OpenAPIV3.TagObject[] = [
-    
+    userTags,
+    proprietaireTags,
+    salleTags,
+    staffTags,
+    clientTags,
+    abonnementClientTags,
+    abonnementProprietaireTags
 ];
 
 export const paths: OpenAPIV3.PathsObject = {
@@ -34,11 +46,24 @@ export const paths: OpenAPIV3.PathsObject = {
         },
     },
     // Module paths
+    ...userPath,
+    ...proprietairePath,
+    ...sallePath,
+    ...staffPath,
+    ...clientPath,
+    ...abonnementClientPath,
+    ...abonnementProprietairePath
 
 };
 
 export const schemas: OpenAPIV3.ComponentsObject['schemas'] = {
-
+    ...userSchema,
+    ...proprietaireSchema,
+    ...salleSchema,
+    ...staffSchema,
+    ...clientSchema,
+    ...abonnementClientSchema,
+    ...abonnementProprietaireSchema
 
 };
 

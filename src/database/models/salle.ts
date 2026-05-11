@@ -2,6 +2,7 @@ import { DataTypes, Model, Optional, Sequelize } from "sequelize";
 
 export interface SalleAttributes {
     id: string;
+    proprietaireId: string;
     nom: string;
     contact: string;
     adresse: string
@@ -14,6 +15,7 @@ export interface SalleCreationAttributes extends Optional<SalleAttributes, "id" 
 
 class Salle extends Model<SalleAttributes, SalleCreationAttributes> implements SalleAttributes {
     declare id: string;
+    declare proprietaireId: string;
     declare nom: string;
     declare contact: string;
     declare adresse: string
@@ -31,6 +33,15 @@ const initModelSalle = (sequelize: Sequelize) => {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4,
                 primaryKey: true
+            },
+            proprietaireId: {
+                type: DataTypes.UUID,
+                allowNull: false,
+                field: 'proprietaireId',
+                references: {
+                    model: 'proprietaires',
+                    key: 'id',
+                }
             },
             nom: {
                 type: DataTypes.STRING,

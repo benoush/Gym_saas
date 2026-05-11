@@ -9,10 +9,10 @@ export interface ProprietaireAttributes {
   doc_justificatif: string;
   createdAt?: Date;
   updatedAt?: Date;
-  deleteAt?: Date
+  deletedAt?: Date
 }
 
-export interface ProprietaireCreationAttributes extends Optional<ProprietaireAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
+export interface ProprietaireCreationAttributes extends Optional<ProprietaireAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt"> { }
 
 
 export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireAttributes> implements ProprietaireAttributes {
@@ -23,7 +23,7 @@ export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireAttr
   declare doc_justificatif: string;
   declare createdAt: Date;
   declare updatedAt: Date;
-  declare deleteAt: Date;
+  declare deletedAt: Date;
   declare static associate: (models: any) => void;
 
 }
@@ -59,7 +59,7 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
-      deleteAt: DataTypes.DATE
+      deletedAt: DataTypes.DATE
     },
     {
       sequelize,
