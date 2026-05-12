@@ -63,7 +63,7 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
     },
     {
       sequelize,
-      modelName: "Prorietaire",
+      modelName: "Proprietaire",
       tableName: "proprietaires",
       timestamps: true,
       underscored: true,

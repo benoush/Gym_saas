@@ -82,7 +82,7 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
 
 AbonnementClient.associate = (models: any) => {
     AbonnementClient.belongsTo(models.Client, { foreignKey: 'clientId', as: 'clients' });
-    AbonnementClient.hasMany(models.Facture, { foreignKey: 'factureId', as: 'factures' });
+    AbonnementClient.hasMany(models.Facture, { foreignKey: 'abonnementClientId', as: 'factures' });
 }
 
 export { AbonnementClient, initModelAbonnementClient };

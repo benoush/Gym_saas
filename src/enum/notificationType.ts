@@ -1,5 +1,6 @@
 export enum notificationType {
-    SMS = "SMS",
-    WHATSAPP = "WHATSAPP",
-    EMAIL = "EMAIL"
+    INFO = "INFO",
+    ALERTE = "ALERTE",
+    RAPPEL = "RAPPEL",
+    PROMOTION = "PROMOTION"
 }

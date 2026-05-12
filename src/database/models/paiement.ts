@@ -6,8 +6,8 @@ import { methodePaiement } from "../../enum/methodePaiement"
 export interface PaiementAttributes {
     id: string;
     factureId: string;
-    statut: string;
-    methode: string;
+    statut: statutPaiement;
+    methode: methodePaiement;
     num_transaction: string;
     createdAt?: Date;
     updatedAt?: Date

@@ -96,10 +96,10 @@ const initModelUser = (sequelize: Sequelize) => {
 };
 
 User.associate = (models: any) => {
-  User.hasOne(models.Proprietaire, { foreignKey: 'proprioId', as: 'proprietaires' });
-  User.hasOne(models.Client, { foreignKey: 'clientId', as: 'clients' });
-  User.hasOne(models.Staff, { foreignKey: 'staffId', as: 'staffs' });
-  User.hasMany(models.Notif, { foreignKey: 'notifId', as: 'notifications' });
+  User.hasOne(models.Proprietaire, { foreignKey: 'userId', as: 'proprietaires' });
+  User.hasOne(models.Client, { foreignKey: 'userId', as: 'clients' });
+  User.hasOne(models.Staff, { foreignKey: 'userId', as: 'staffs' });
+  User.hasMany(models.Notification, { foreignKey: 'userId', as: 'notifications' });
 }
 
 export { User, initModelUser }

@@ -83,7 +83,7 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
 
 AbonnementProprietaire.associate = (models: any) => {
     AbonnementProprietaire.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
-    AbonnementProprietaire.hasOne(models.Facture, { foreignKey: 'factureId', as: 'factures' });
+    AbonnementProprietaire.hasOne(models.Facture, { foreignKey: 'abonnementProprietaireId', as: 'factures' });
 }
 
 export { AbonnementProprietaire, initModelAbonnementProprietaire };

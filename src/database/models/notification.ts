@@ -1,17 +1,17 @@
 import { DataTypes, EnumDataType, Model, Optional, Sequelize } from "sequelize";
 import { notificationType } from "../../enum/notificationType"
 
-export interface NotifAttributes {
+export interface NotificationAttributes {
     id: string;
     userId: string;
-    notification_type: string;
+    notification_type: notificationType;
     content: string;
     sentAt?: Date;
 }
 
-export interface NotifCreationAttributes extends Optional<NotifAttributes, "id" | "sentAt"> { }
+export interface NotificationCreationAttributes extends Optional<NotificationAttributes, "id" | "sentAt"> { }
 
-class Notif extends Model<NotifAttributes, NotifCreationAttributes> implements NotifAttributes {
+class Notification extends Model<NotificationAttributes, NotificationCreationAttributes> implements NotificationAttributes {
     declare id: string;
     declare userId: string;
     declare notification_type: notificationType;
@@ -21,8 +21,8 @@ class Notif extends Model<NotifAttributes, NotifCreationAttributes> implements N
 
 }
 
-const initModelNotif = (sequelize: Sequelize) => {
-    Notif.init(
+const initModelNotification = (sequelize: Sequelize) => {
+    Notification.init(
         {
             id: {
                 type: DataTypes.UUID,
@@ -58,10 +58,10 @@ const initModelNotif = (sequelize: Sequelize) => {
     )
 }
 
-Notif.associate = (models: any) => {
-    Notif.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
+Notification.associate = (models: any) => {
+    Notification.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
 };
 
-export { Notif, initModelNotif };
+export { Notification, initModelNotification };
 
 

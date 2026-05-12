@@ -11,6 +11,11 @@ import staffRoute from "modules/staff/staffRoute";
 import clientRoute from "modules/client/clientRoute";
 import abonnementProprietaireRoute from "modules/abonnementProprietaire/abonnementProprietaireRoute";
 import abonnementClientRoute from "modules/abonnementClient/abonnementClientRoute";
+import planAbonnementClientRoute from "modules/planAbonnementClient/planAbonnementClientRoute";
+import planAbonnementProprietaireRoute from "modules/planAbonnementProprietaire/planAbonnementProprietaireRoute";
+import factureRoute from "modules/facture/factureRoute";
+import paiementRoute from "modules/paiement/paiementRoute";
+import notificationRoute from "modules/notification/notificationRoute";
 
 
 const app: Express = express();
@@ -61,6 +66,11 @@ app.use(`${API_PREFIX}/staff`, staffRoute)
 app.use(`${API_PREFIX}/client`, clientRoute)
 app.use(`${API_PREFIX}/abonnementProprietaire`, abonnementProprietaireRoute)
 app.use(`${API_PREFIX}/abonnementClient`, abonnementClientRoute)
+app.use(`${API_PREFIX}/planAbonnementClient`, planAbonnementClientRoute)
+app.use(`${API_PREFIX}/planAbonnementProprietaire`, planAbonnementProprietaireRoute)
+app.use(`${API_PREFIX}/facture`, factureRoute)
+app.use(`${API_PREFIX}/paiement`, paiementRoute)
+app.use(`${API_PREFIX}/notification`, notificationRoute)
 
 // 404 handler
 app.use(notFoundHandler);

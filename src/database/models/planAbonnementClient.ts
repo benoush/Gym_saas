@@ -1,10 +1,11 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
+import { typePlanAbonnementClient } from "../../enum/typePlanAbonnementClient";
 
-export interface PlanSalleAttributes {
+export interface PlanAbonnementClientAttributes {
   id: string;
   salleId: string;
-  type: string;
+  type: typePlanAbonnementClient;
   prix: number;
   description: string;
   createdAt?: Date;
@@ -12,13 +13,13 @@ export interface PlanSalleAttributes {
   deleteAt?: Date
 }
 
-export interface PlanSalleCreationAttributes extends Optional<PlanSalleAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
+export interface PlanAbonnementClientCreationAttributes extends Optional<PlanAbonnementClientAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
-export class PlanSalle extends Model<PlanSalleAttributes, PlanSalleCreationAttributes> implements PlanSalleAttributes {
+export class PlanAbonnementClient extends Model<PlanAbonnementClientAttributes, PlanAbonnementClientCreationAttributes> implements PlanAbonnementClientAttributes {
   declare id: string;
   declare salleId: string;
-  declare type: string;
+  declare type: typePlanAbonnementClient;
   declare prix: number;
   declare description: string;
   declare createdAt: Date;
@@ -28,8 +29,8 @@ export class PlanSalle extends Model<PlanSalleAttributes, PlanSalleCreationAttri
 
 }
 
-export const initModelPlanSalle = (sequelize: Sequelize) => {
-  PlanSalle.init(
+export const initModelPlanAbonnementClient = (sequelize: Sequelize) => {
+  PlanAbonnementClient.init(
     {
       id: {
         type: DataTypes.UUID,
@@ -46,11 +47,11 @@ export const initModelPlanSalle = (sequelize: Sequelize) => {
         }
       },
       type: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM(...Object.values(typePlanAbonnementClient)),
         allowNull: false,
       },
       prix: {
-        type: DataTypes.STRING,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
       description: {
@@ -63,8 +64,8 @@ export const initModelPlanSalle = (sequelize: Sequelize) => {
     },
     {
       sequelize,
-      modelName: "PlanSalle",
-      tableName: "planSalles",
+      modelName: "PlanAbonnementClient",
+      tableName: "PlanAbonnementClients",
       timestamps: true,
       underscored: true,
       paranoid: true,
@@ -72,6 +73,6 @@ export const initModelPlanSalle = (sequelize: Sequelize) => {
   );
 };
 
-PlanSalle.associate = (models: any) => {
-  PlanSalle.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salles' });
+PlanAbonnementClient.associate = (models: any) => {
+  PlanAbonnementClient.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salles' });
 }

@@ -73,9 +73,9 @@ const initModelSalle = (sequelize: Sequelize) => {
 
 
 Salle.associate = (models: any) => {
-    Salle.hasOne(models.Staff, { foreignKey: 'staffId', as: 'staffs' });
-    Salle.hasOne(models.Facture, { foreignKey: 'factureId', as: 'factures' });
-    Salle.hasOne(models.PlanSalle, { foreignKey: 'planSalleId', as: 'planSalles' });
+    Salle.hasOne(models.Staff, { foreignKey: 'salleId', as: 'staffs' });
+    Salle.hasOne(models.Facture, { foreignKey: 'salleId', as: 'factures' });
+    Salle.hasOne(models.PlanSalle, { foreignKey: 'salleId', as: 'planSalles' });
     Salle.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
 }
 

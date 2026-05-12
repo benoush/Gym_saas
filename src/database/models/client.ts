@@ -45,7 +45,7 @@ const initModelClient = (sequelize: Sequelize) => {
       statut: {
         type: DataTypes.ENUM(...Object.values(statutClient)),
         allowNull: false,
-        defaultValue: statutClient.Actif
+        defaultValue: statutClient.ACTIF
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,

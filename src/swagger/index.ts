@@ -7,6 +7,12 @@ import { staffPath, staffSchema, staffTags } from "./staff.swagger";
 import { clientPath, clientSchema, clientTags } from "./client.swagger";
 import { abonnementClientPath, abonnementClientSchema, abonnementClientTags } from "./abonnementClient.swagger";
 import { abonnementProprietairePath, abonnementProprietaireSchema, abonnementProprietaireTags } from "./abonnementProprietaire.swagger";
+import { planAbonnementClientPath, planAbonnementClientSchema, planAbonnementClientTags } from "./planAbonnementClient.swagger";
+import { planAbonnementProprietairePath, planAbonnementProprietaireSchema, planAbonnementProprietaireTags } from "./planAbonnementProprietaire.swagger";
+import { facturePath, factureSchema, factureTags } from "./facture.swagger";
+import { paiementPath, paiementSchema, paiementTags } from "./paiement.swagger";
+import { notificationPath, notificationSchema, notificationTags } from "./notification.swagger";
+import pl from "zod/v4/locales/pl.js";
 
 export const tags: OpenAPIV3.TagObject[] = [
     userTags,
@@ -15,7 +21,12 @@ export const tags: OpenAPIV3.TagObject[] = [
     staffTags,
     clientTags,
     abonnementClientTags,
-    abonnementProprietaireTags
+    abonnementProprietaireTags,
+    planAbonnementClientTags,
+    planAbonnementProprietaireTags,
+    factureTags,
+    paiementTags,
+    notificationTags
 ];
 
 export const paths: OpenAPIV3.PathsObject = {
@@ -52,7 +63,12 @@ export const paths: OpenAPIV3.PathsObject = {
     ...staffPath,
     ...clientPath,
     ...abonnementClientPath,
-    ...abonnementProprietairePath
+    ...abonnementProprietairePath,
+    ...planAbonnementClientPath,
+    ...planAbonnementProprietairePath,
+    ...facturePath,
+    ...paiementPath,
+    ...notificationPath
 
 };
 
@@ -63,7 +79,12 @@ export const schemas: OpenAPIV3.ComponentsObject['schemas'] = {
     ...staffSchema,
     ...clientSchema,
     ...abonnementClientSchema,
-    ...abonnementProprietaireSchema
+    ...abonnementProprietaireSchema,
+    ...planAbonnementClientSchema,
+    ...planAbonnementProprietaireSchema,
+    ...factureSchema,
+    ...paiementSchema,
+    ...notificationSchema
 
 };
 

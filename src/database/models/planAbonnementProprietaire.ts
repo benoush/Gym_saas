@@ -1,9 +1,9 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
-
-export interface PlanSaasAttributes {
+import { typePlanAbonnementProprietaire } from "../../enum/typePlanAbonnementProprietaire";
+export interface PlanAbonnementProprietaireAttributes {
     id: string;
-    type: string;
+    type: typePlanAbonnementProprietaire;
     prix: number;
     description: string;
     createdAt?: Date;
@@ -11,12 +11,12 @@ export interface PlanSaasAttributes {
     deleteAt?: Date
 }
 
-export interface PlanSaasCreationAttributes extends Optional<PlanSaasAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
+export interface PlanAbonnementProprietaireCreationAttributes extends Optional<PlanAbonnementProprietaireAttributes,"id"|"createdAt"|"updatedAt"|"deleteAt">{}
 
 
-export class PlanSaas extends Model<PlanSaasAttributes, PlanSaasCreationAttributes> implements PlanSaasAttributes{
+export class PlanAbonnementProprietaire extends Model<PlanAbonnementProprietaireAttributes, PlanAbonnementProprietaireCreationAttributes> implements PlanAbonnementProprietaireAttributes{
     declare id: string;
-    declare type: string;
+    declare type: typePlanAbonnementProprietaire;
     declare prix: number;
     declare description: string;
     declare createdAt: Date;
@@ -24,8 +24,8 @@ export class PlanSaas extends Model<PlanSaasAttributes, PlanSaasCreationAttribut
     declare deleteAt: Date;
 }
 
-export const initModelPlanSaas = (sequelize: Sequelize) => {
-  PlanSaas.init(
+export const initModelPlanAbonnementProprietaire = (sequelize: Sequelize) => {
+  PlanAbonnementProprietaire.init(
     {
       id: {
         type: DataTypes.UUID,
@@ -33,11 +33,11 @@ export const initModelPlanSaas = (sequelize: Sequelize) => {
         primaryKey: true,
       },
       type: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM(...Object.values(typePlanAbonnementProprietaire)),
         allowNull: false,
       },
       prix: {
-        type: DataTypes.STRING,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
       description: {
@@ -50,8 +50,8 @@ export const initModelPlanSaas = (sequelize: Sequelize) => {
     },
     {
       sequelize,
-      modelName: "PlanSaas",
-      tableName: "planSaas",
+      modelName: "PlanAbonnementProprietaire",
+      tableName: "PlanAbonnementProprietaire",
       timestamps: true,
       underscored: true,
       paranoid: true,

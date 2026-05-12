@@ -1,4 +1,6 @@
 export enum methodePaiement {
-    MobileMoney="MobileMoney",
-    Carte="Carte"
+    MOBILE_MONEY="MOBILE_MONEY",
+    CARTE="CARTE",
+    ESPECES="ESPECES",
+    VIREMENT="VIREMENT"
 }

@@ -1,4 +1,6 @@
 export enum statutPaiement {
-    EFFECTUE = "EFFECTUE",
-    NON_EFFECTUE = "NON_EFFECTUE"
+    EN_ATTENTE = "EN_ATTENTE",
+    PAYE = "PAYE",
+    ECHOUE = "ECHOUE",
+    REMBOURSE = "REMBOURSE"
 }
