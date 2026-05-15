@@ -1,4 +1,4 @@
-import PageMembres from "@/views/gerald-gym-pages/PageMembres"
+import PageMembres from "@/views/gerald-gym-pages/Membres/PageMembres"
 import { Grid } from "@mui/material"
 
 const TableauDeBord

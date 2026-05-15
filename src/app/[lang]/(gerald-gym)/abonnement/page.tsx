@@ -1,4 +1,4 @@
-import PageAbonnement from "@/views/gerald-gym-pages/PageAbonnement"
+import PageAbonnement from "@/views/gerald-gym-pages/Abonnement/PageAbonnement"
 import { Grid } from "@mui/material"
 
 const TableauDeBord

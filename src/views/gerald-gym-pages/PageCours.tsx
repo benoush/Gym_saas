@@ -14,7 +14,7 @@ import {
 import type { ColumnDef } from '@tanstack/react-table'
 
 import TableGeneric from '@/components/gerald-gym/TableGenerique'
-import AbonnementTableFilters from './AbonnementTableFilters'
+import AbonnementTableFilters from './Abonnement/AbonnementTableFilters'
 
 type cours = {
   titre: string
@@ -157,7 +157,7 @@ const PageCours = () => {
         <div className='mb-5 flex justify-end'>
           <Button
             variant='contained'
-            startIcon={<i className='tabler-users' />}
+            startIcon={<i className='tabler-plus' />}
           >
             Ajouter un Cours
           </Button>

@@ -79,7 +79,7 @@ const PageEquipement = () => {
                   </Typography>
 
                   <Stack direction='row' spacing={1} alignItems='center' mt={2} mb={3}>
-                    <i className='tabler-package text-[20px]' />
+                    <i className='tabler-stack-2 text-[20px]' />
                     <Typography>10 en stocks</Typography>
                   </Stack>
 
@@ -127,7 +127,7 @@ const PageEquipement = () => {
                   </Typography>
 
                   <Stack direction='row' spacing={1} alignItems='center' mt={2} mb={3}>
-                    <i className='tabler-package text-[20px]' />
+                    <i className='tabler-stack-2 text-[20px]' />
                     <Typography>10 en stocks</Typography>
                   </Stack>
 
