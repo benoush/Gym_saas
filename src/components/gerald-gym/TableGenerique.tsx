@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardHeader } from '@mui/material'
+import { Card, CardHeader, Typography } from '@mui/material'
 
 import type { ColumnDef, FilterFn } from '@tanstack/react-table'
 import {
@@ -102,6 +102,13 @@ const TableGeneric = <T extends object>({
           </tbody>
 
         </table>
+        <Typography
+  variant='body2'
+  color='text.secondary'
+  sx={{ p: 4, textAlign: '' }}
+>
+  Affichage de {data.length} entrées
+</Typography>
       </div>
     </Card>
   )
