@@ -34,6 +34,7 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
     post: {
       tags: ["AbonnementClient"],
       summary: "Create an abonnementClient",
+      security: [{ bearerAuth: [] }],
       description: "Create a new abonnement for a client",
       requestBody: {
         required: true,
@@ -163,6 +164,7 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementClient"],
       summary: "Update abonnementClient data by ID",
       description: "Update type, description, nbre_sceance or montant of an abonnementClient",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -213,6 +215,7 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementClient"],
       summary: "Delete abonnementClient by ID",
       description: "Soft delete an abonnementClient by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -234,6 +237,7 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementClient"],
       summary: "Update abonnementClient statut by ID",
       description: "Change the statut of an abonnementClient (ACTIF / SUSPENDU / RESILIE / EXPIRE)",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

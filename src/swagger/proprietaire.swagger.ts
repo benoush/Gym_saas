@@ -25,18 +25,53 @@ const proprietairePath: OpenAPIV3.PathsObject = {
       tags: ["Proprietaire"],
       summary: "Create a proprietaire",
       description: "Create a new proprietaire",
+      security: [{ bearerAuth: [] }],
+     
+      //   required: true,
+      //   content: {
+      //     "multipart/form-data": {
+      //       schema: {
+      //         type: "object",
+      //         required: ["userId", "recto_carte_identite", "verso_carte_identite", "doc_justificatif"],
+      //         properties: {
+      //           userId: { type: "string", format: "uuid" },
+      //           recto_carte_identite: { type: "string", format: "binary" },
+      //           verso_carte_identite: { type: "string", format: "binary" },
+      //           doc_justificatif: { type: "string", format: "binary" },
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
       requestBody: {
         required: true,
         content: {
           "multipart/form-data": {
             schema: {
               type: "object",
-              required: ["userId", "recto_carte_identite", "verso_carte_identite", "doc_justificatif"],
+              required: [
+                "photo",
+                "nom",
+                "prenom",
+                "email",
+                "tel",
+                "sexe",
+                "password",
+                "recto_carte_identite",
+                "verso_carte_identite",
+                "doc_justificatif"
+              ],
               properties: {
-                userId: { type: "string", format: "uuid" },
+                photo: { type: "string", format: "binary" },
+                nom: { type: "string" },
+                prenom: { type: "string" },
+                email: { type: "string", format: "email" },
+                tel: { type: "string" },
+                sexe: { type: "string" },
+                password: { type: "string" },
                 recto_carte_identite: { type: "string", format: "binary" },
                 verso_carte_identite: { type: "string", format: "binary" },
-                doc_justificatif: { type: "string", format: "binary" },
+                doc_justificatif: { type: "string", format: "binary" },              
               },
             },
           },
@@ -144,6 +179,7 @@ const proprietairePath: OpenAPIV3.PathsObject = {
       tags: ["Proprietaire"],
       summary: "Update proprietaire by ID",
       description: "Update the information of the proprietaire by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -190,6 +226,7 @@ const proprietairePath: OpenAPIV3.PathsObject = {
       tags: ["Proprietaire"],
       summary: "Delete proprietaire by ID",
       description: "Delete a proprietaire by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

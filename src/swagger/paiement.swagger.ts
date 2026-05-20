@@ -33,6 +33,7 @@ const paiementPath: OpenAPIV3.PathsObject = {
       tags: ["Paiement"],
       summary: "Create a paiement",
       description: "Create a new paiement linked to a facture",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -128,6 +129,7 @@ const paiementPath: OpenAPIV3.PathsObject = {
       tags: ["Paiement"],
       summary: "Update paiement statut by ID",
       description: "Change the statut of a paiement",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -179,6 +181,7 @@ const paiementPath: OpenAPIV3.PathsObject = {
       tags: ["Paiement"],
       summary: "Update paiement methode by ID",
       description: "Change the methode of a paiement",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -261,6 +264,7 @@ const paiementPath: OpenAPIV3.PathsObject = {
       tags: ["Paiement"],
       summary: "Update paiement by ID",
       description: "Update all fields of a paiement",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -314,6 +318,7 @@ const paiementPath: OpenAPIV3.PathsObject = {
       tags: ["Paiement"],
       summary: "Delete paiement by ID",
       description: "Soft delete a paiement by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

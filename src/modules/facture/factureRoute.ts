@@ -9,7 +9,7 @@ const factureController = new FactureController();
 
 
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 router.post("", validate(createFactureSchema, "body"), factureController.createFacture);
 router.get("", validate(FacturePaginationSchema, "query"), factureController.getFacturePaginated);
 router.get("/:id", validate(FactureIdSchema, "params"), factureController.getFactureById);

@@ -1,5 +1,5 @@
 import { Model, ModelStatic } from "sequelize";
-import { Client } from "../../database/models/client";
+import { Client, ClientCreationAttributes } from "../../database/models/client";
 import { NotFoundError } from "../../common/errors/index";
 import { User } from "../../database/models/user";
 import { ClientIdAttribute, CreateClientAttribute } from "./clientSchema";
@@ -12,7 +12,7 @@ export class ClientRepository {
         this.client = Client;
     }
 
-    async createClient(data: CreateClientAttribute) {
+    async createClient(data: ClientCreationAttributes) {
         return this.client.create(data as Client);
     }
 

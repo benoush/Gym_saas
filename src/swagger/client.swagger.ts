@@ -27,15 +27,37 @@ const clientPath: OpenAPIV3.PathsObject = {
       tags: ["Client"],
       summary: "Create a client",
       description: "Create a new client linked to a user",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
-          "application/json": {
+          "multipart/form-data": {
             schema: {
               type: "object",
-              required: ["userId"],
+              required: [
+                "photo",
+                "nom",
+                "prenom",
+                "email",
+                "tel",
+                "sexe",
+                "password",
+                "statut"
+              ],
               properties: {
-                userId: { type: "string", format: "uuid" },
+                photo: { type: "string", format: "binary" },
+                statut: {
+                  type: "string",
+                  enum: ["ACTIF", "INACTIF", "SUSPENDU"],
+                  default: "ACTIF",
+                },
+                nom: { type: "string" },
+                prenom: { type: "string" },
+                email: { type: "string", format: "email" },
+                tel: { type: "string" },
+                sexe: { type: "string" },
+                password: { type: "string" },
+
               },
             },
           },
@@ -154,6 +176,7 @@ const clientPath: OpenAPIV3.PathsObject = {
       tags: ["Client"],
       summary: "Delete client by ID",
       description: "Soft delete a client by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -209,6 +232,7 @@ const clientPath: OpenAPIV3.PathsObject = {
       tags: ["Client"],
       summary: "Update client statut",
       description: "Change the statut of a client (ACTIF / INACTIF / SUSPENDU)",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

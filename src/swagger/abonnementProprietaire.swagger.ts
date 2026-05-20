@@ -34,6 +34,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementProprietaire"],
       summary: "Create an abonnementProprietaire",
       description: "Create a new abonnement for a proprietaire",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -158,6 +159,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementProprietaire"],
       summary: "Update abonnementProprietaire by ID",
       description: "Update the data of an abonnementProprietaire",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -209,6 +211,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementProprietaire"],
       summary: "Delete abonnementProprietaire by ID",
       description: "Soft delete an abonnementProprietaire by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -230,6 +233,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["AbonnementProprietaire"],
       summary: "Update abonnementProprietaire statut by ID",
       description: "Change the statut of an abonnementProprietaire (ACTIF / SUSPENDU / RESILIE / EXPIRE)",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

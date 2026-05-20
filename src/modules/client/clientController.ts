@@ -2,6 +2,7 @@ import { ClientService } from "./clientService";
 import { NextFunction, Request, Response } from "express";
 import { sendPaginated, sendSuccess } from "../../common/api.response"
 import { ClientIdAttribute, CreateClientAttribute } from "./clientSchema";
+import da from "zod/v4/locales/da.js";
 
 export class ClientController {
     private clientService: ClientService;
@@ -15,7 +16,7 @@ export class ClientController {
         const data = await this.clientService.createClient(objectClient);
         return sendSuccess(
             res,
-            objectClient,
+            data,
             "Operation succesfull"
         )
     }

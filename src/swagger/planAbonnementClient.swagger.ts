@@ -28,6 +28,7 @@ const planAbonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementClient"],
       summary: "Create a plan abonnement client",
       description: "Create a new plan abonnement client",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -161,6 +162,7 @@ const planAbonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementClient"],
       summary: "Delete plan abonnement client by ID",
       description: "Soft delete a client by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -216,6 +218,7 @@ const planAbonnementClientPath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementClient"],
       summary: "Update plan abonnement client type",
       description: "Change the type of a plan abonnement client",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

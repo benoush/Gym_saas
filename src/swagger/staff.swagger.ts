@@ -23,6 +23,7 @@ const staffPath: OpenAPIV3.PathsObject = {
       tags: ["Staff"],
       summary: "Create a staff",
       description: "Create a new staff member",
+      security: [{ bearerAuth: [] }],
       // requestBody: {
       //   required: true,
       //   content: {
@@ -173,6 +174,7 @@ const staffPath: OpenAPIV3.PathsObject = {
       tags: ["Staff"],
       summary: "Update staff by ID",
       description: "Update the information of a staff member by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -218,6 +220,7 @@ const staffPath: OpenAPIV3.PathsObject = {
       tags: ["Staff"],
       summary: "Delete staff by ID",
       description: "Delete a staff member by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

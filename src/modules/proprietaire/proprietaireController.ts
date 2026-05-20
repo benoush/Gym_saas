@@ -23,17 +23,21 @@ export class ProprietaireController {
     const doc = files["doc_justificatif"]?.[0]?.path.replace(/\\/g, "/");
 
     if ( !recto || !verso || !doc || !photo) {
-      return res.status(400).json({ success: false, message: "Les 3 documents sont requis" });
+      return res.status(400).json({ success: false, message: "Les 4 documents sont requis" });
     }
 
-    const data = await this.proprietaireService.createProprietaire({
-      userId: req.body.userId,
-      photo: photo,
-      recto_carte_identite: recto,
-      verso_carte_identite: verso,
-      doc_justificatif: doc,
-    });
-    return sendSuccess(res, data, "Operation successful", 201);
+        const data = await this.proprietaireService.createProprietaire( {
+            ...req.body,
+            photo,
+            recto_carte_identite: recto,
+            verso_carte_identite: verso,
+            doc_justificatif: doc,
+        } as CreateProprietaireAttribute);
+        return sendSuccess(
+            res,
+            data,
+            "Operation succesfull"
+        )
   };
 
     getProprietaireById = async (req: Request, res: Response) => {

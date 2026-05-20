@@ -9,12 +9,13 @@ const router: Router = Router();
 const proprietaireController = new ProprietaireController();
 
 const uploadFields = uploadProprietaire.fields([
+  { name: "photo", maxCount: 1 },
   { name: "recto_carte_identite", maxCount: 1 },
   { name: "verso_carte_identite", maxCount: 1 },
   { name: "doc_justificatif", maxCount: 1 },
 ]);
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 
 router.post("", uploadFields, proprietaireController.createProprietaire);
 router.get("", validate(proprietairePaginationSchema, "query"), proprietaireController.getProprietairePaginated);

@@ -29,6 +29,7 @@ const userPath: OpenAPIV3.PathsObject = {
       tags: ["User"],
       summary: "Create a user",
       description: "Create a new user",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -162,6 +163,8 @@ const userPath: OpenAPIV3.PathsObject = {
     patch: {
       tags: ["User"],
       summary: "Update user",
+      description: "Update a user by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -203,6 +206,8 @@ const userPath: OpenAPIV3.PathsObject = {
     delete: {
       tags: ["User"],
       summary: "Delete user",
+      description: "Delete a user by their unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -251,4 +256,4 @@ const userPath: OpenAPIV3.PathsObject = {
   },
 };
 
-export { userTags, userSchema, userPath };
+export { userTags, userSchema, userPath }; 

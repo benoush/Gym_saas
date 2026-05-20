@@ -7,6 +7,7 @@ import { authMiddleware, isStaff } from "../middleware/auth.middleware";
 const router: Router = Router();
 const abonnementClientController = new AbonnementClientController();
 
+router.use(authMiddleware);
 
 
 router.use(authMiddleware);

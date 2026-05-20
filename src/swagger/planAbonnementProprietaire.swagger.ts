@@ -28,6 +28,7 @@ const planAbonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementProprietaire"],
       summary: "Create a planAbonnementProprietaire",
       description: "Create a new plan abonnement for a proprietaire",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -118,6 +119,7 @@ const planAbonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementProprietaire"],
       summary: "Update planAbonnementProprietaire type by ID",
       description: "Change the type of a planAbonnementProprietaire",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -200,6 +202,7 @@ const planAbonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementProprietaire"],
       summary: "Update planAbonnementProprietaire by ID",
       description: "Update type, prix or description of a planAbonnementProprietaire",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -249,6 +252,7 @@ const planAbonnementProprietairePath: OpenAPIV3.PathsObject = {
       tags: ["PlanAbonnementProprietaire"],
       summary: "Delete planAbonnementProprietaire by ID",
       description: "Soft delete a planAbonnementProprietaire by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

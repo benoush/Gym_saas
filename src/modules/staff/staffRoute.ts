@@ -10,7 +10,7 @@ const staffController = new StaffController();
 
 
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 router.post("", uploadAvatar.single("photo"), validate(createStaffSchema, "body"), staffController.createStaff);
 router.get("", validate(StaffPaginationSchema, "query"), staffController.getStaffPaginated);
 router.get("/:id", validate(StaffIdSchema, "params"), staffController.getStaffById);

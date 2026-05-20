@@ -1,9 +1,12 @@
 import z from "zod";
 import { statutClient } from "../../enum/statutClient";
+import { createUserSchema } from "modules/user/userSchema";
 
+const userClientSchema = createUserSchema.omit({ role: true });
 const createClientSchema = z.object({
-  userId: z.coerce.string("userId must be a string"),
-});
+  // userId: z.coerce.string("userId must be a string"),
+  
+}).extend(userClientSchema.shape);
 
 
 const ClientIdSchema = z.object({

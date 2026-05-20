@@ -3,14 +3,15 @@ import { Router } from "express";
 import { ClientController } from "./clientController";
 import { ClientPaginationSchema, createClientSchema, ClientIdSchema, updateClientSchema } from "./clientSchema";
 import { authMiddleware } from "../middleware/auth.middleware";
+import { uploadAvatar } from "config/multer";
 
 const router: Router = Router();
 const clientController = new ClientController();
 
 
 
-// router.use(authMiddleware);
-router.post("", validate(createClientSchema, "body"), clientController.createClient);
+router.use(authMiddleware);
+router.post("", uploadAvatar.single("photo"), validate(createClientSchema, "body"), clientController.createClient);
 router.get("", validate(ClientPaginationSchema, "query"), clientController.getClientPaginated);
 router.get("/:id", validate(ClientIdSchema, "params"), clientController.getClientById);
 router.patch("/statut/:id", validate(ClientIdSchema, "params"), validate(updateClientSchema, "body"), clientController.updateStatut);

@@ -28,6 +28,7 @@ const notificationPath: OpenAPIV3.PathsObject = {
       tags: ["Notification"],
       summary: "Create a notification",
       description: "Create a new notification for a user",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -119,6 +120,7 @@ const notificationPath: OpenAPIV3.PathsObject = {
       tags: ["Notification"],
       summary: "Update notification type by ID",
       description: "Change the type of a notification",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -201,6 +203,7 @@ const notificationPath: OpenAPIV3.PathsObject = {
       tags: ["Notification"],
       summary: "Update notification by ID",
       description: "Update all fields of a notification",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -250,6 +253,7 @@ const notificationPath: OpenAPIV3.PathsObject = {
       tags: ["Notification"],
       summary: "Delete notification by ID",
       description: "Soft delete a notification by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

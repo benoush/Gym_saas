@@ -26,6 +26,7 @@ const sallePath: OpenAPIV3.PathsObject = {
       tags: ["Salle"],
       summary: "Create a salle",
       description: "Create a new salle",
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -147,6 +148,7 @@ const sallePath: OpenAPIV3.PathsObject = {
       tags: ["Salle"],
       summary: "Update salle by ID",
       description: "Update the information of a salle by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -195,6 +197,7 @@ const sallePath: OpenAPIV3.PathsObject = {
       tags: ["Salle"],
       summary: "Delete salle by ID",
       description: "Delete a salle by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

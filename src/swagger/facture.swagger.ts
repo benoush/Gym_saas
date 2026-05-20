@@ -26,7 +26,8 @@ const facturePath: OpenAPIV3.PathsObject = {
     post: {
       tags: ["Facture"],
       summary: "Create a facture",
-      description: "Create a new facture",
+      description: "Create a new facture",  
+      security: [{ bearerAuth: [] }],
       requestBody: {
         required: true,
         content: {
@@ -156,6 +157,7 @@ const facturePath: OpenAPIV3.PathsObject = {
       tags: ["Facture"],
       summary: "Update facture by ID",
       description: "Update the information of a facture by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",
@@ -205,6 +207,7 @@ const facturePath: OpenAPIV3.PathsObject = {
       tags: ["Facture"],
       summary: "Delete facture by ID",
       description: "Soft delete a facture by its unique id",
+      security: [{ bearerAuth: [] }],
       parameters: [
         {
           name: "id",

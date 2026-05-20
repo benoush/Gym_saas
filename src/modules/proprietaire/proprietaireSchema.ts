@@ -1,10 +1,10 @@
 import z from "zod";
 import { createUserSchema } from "modules/user/userSchema";
+import no from "zod/v4/locales/no.js";
 
 const userProprietaireSchema = createUserSchema.omit({ role: true });
 const createProprietaireSchema = z.object({
   // userId: z.coerce.string("userId must be a string"),
-  photo : z.string(),
   recto_carte_identite: z.string(),
   verso_carte_identite: z.string(),
   doc_justificatif: z.string(),

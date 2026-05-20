@@ -10,7 +10,7 @@ const notificationController = new NotificationController();
 
 
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 router.post("", validate(createNotificationSchema, "body"), notificationController.createNotification);
 router.get("", validate(NotificationPaginationSchema, "query"), notificationController.getNotificationPaginated);
 router.patch("/type/:id", validate(NotificationIdSchema, "params"), validate(updateNotificationTypeSchema, "body"), notificationController.updateNotificationType);
