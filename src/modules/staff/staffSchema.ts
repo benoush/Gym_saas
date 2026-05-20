@@ -1,9 +1,11 @@
+import { createUserSchema } from "modules/user/userSchema";
 import z from "zod";
 
+const userStatffSchema = createUserSchema.omit({ role: true });
 const createStaffSchema = z.object({
-  userId: z.coerce.string("userId must be a string"),
+  // userId: z.coerce.string("userId must be a string"),
   salleId: z.coerce.string("salleId must be a string"),
-});
+}).extend(userStatffSchema.shape);
 
 
 const StaffIdSchema = z.object({

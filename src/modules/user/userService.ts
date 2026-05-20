@@ -13,12 +13,12 @@ export class UserService {
         this.userRepository = new UserRepository();
     }
     async createuser(userRequest: UserCreationAttributes) {
-  const hashedPassword = await bcrypt.hash(userRequest.password, 10);
-  return this.userRepository.createuser({
-    ...userRequest,
-    password: hashedPassword,
-  });
-}
+        const hashedPassword = await bcrypt.hash(userRequest.password, 10);
+        return this.userRepository.createuser({
+            ...userRequest,
+            password: hashedPassword,
+        });
+    }
     async getuserById(id: string) {
         return await this.userRepository.getuserById(id);
     }

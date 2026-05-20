@@ -16,6 +16,7 @@ import planAbonnementProprietaireRoute from "modules/planAbonnementProprietaire/
 import factureRoute from "modules/facture/factureRoute";
 import paiementRoute from "modules/paiement/paiementRoute";
 import notificationRoute from "modules/notification/notificationRoute";
+import authRoute from "modules/auth/authRoute";
 
 
 const app: Express = express();
@@ -71,6 +72,7 @@ app.use(`${API_PREFIX}/planAbonnementProprietaire`, planAbonnementProprietaireRo
 app.use(`${API_PREFIX}/facture`, factureRoute)
 app.use(`${API_PREFIX}/paiement`, paiementRoute)
 app.use(`${API_PREFIX}/notification`, notificationRoute)
+app.use(`${API_PREFIX}/auth`, require("./modules/auth/authRoute").default);
 
 // 404 handler
 app.use(notFoundHandler);

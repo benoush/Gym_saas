@@ -12,7 +12,7 @@ import { planAbonnementProprietairePath, planAbonnementProprietaireSchema, planA
 import { facturePath, factureSchema, factureTags } from "./facture.swagger";
 import { paiementPath, paiementSchema, paiementTags } from "./paiement.swagger";
 import { notificationPath, notificationSchema, notificationTags } from "./notification.swagger";
-import pl from "zod/v4/locales/pl.js";
+import { authPath, authSchema, authTags } from "./auth.swagger";
 
 export const tags: OpenAPIV3.TagObject[] = [
     userTags,
@@ -26,7 +26,8 @@ export const tags: OpenAPIV3.TagObject[] = [
     planAbonnementProprietaireTags,
     factureTags,
     paiementTags,
-    notificationTags
+    notificationTags,
+    authTags
 ];
 
 export const paths: OpenAPIV3.PathsObject = {
@@ -68,7 +69,8 @@ export const paths: OpenAPIV3.PathsObject = {
     ...planAbonnementProprietairePath,
     ...facturePath,
     ...paiementPath,
-    ...notificationPath
+    ...notificationPath,
+    ...authPath
 
 };
 
@@ -84,7 +86,8 @@ export const schemas: OpenAPIV3.ComponentsObject['schemas'] = {
     ...planAbonnementProprietaireSchema,
     ...factureSchema,
     ...paiementSchema,
-    ...notificationSchema
+    ...notificationSchema,
+    ...authSchema
 
 };
 

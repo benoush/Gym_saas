@@ -16,16 +16,19 @@ export class ProprietaireController {
         if (!files) {
             return res.status(400).json({ success: false, message: "Aucun fichier envoyé" });
         }
+    const photoFile = files["photo"]?.[0];    
+    const photo = photoFile ? photoFile.path.replace(/\\/g, "/") : null;    
     const recto = files["recto_carte_identite"]?.[0]?.path.replace(/\\/g, "/");
     const verso = files["verso_carte_identite"]?.[0]?.path.replace(/\\/g, "/");
     const doc = files["doc_justificatif"]?.[0]?.path.replace(/\\/g, "/");
 
-    if ( !recto || !verso || !doc) {
+    if ( !recto || !verso || !doc || !photo) {
       return res.status(400).json({ success: false, message: "Les 3 documents sont requis" });
     }
 
     const data = await this.proprietaireService.createProprietaire({
       userId: req.body.userId,
+      photo: photo,
       recto_carte_identite: recto,
       verso_carte_identite: verso,
       doc_justificatif: doc,

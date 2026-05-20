@@ -23,16 +23,48 @@ const staffPath: OpenAPIV3.PathsObject = {
       tags: ["Staff"],
       summary: "Create a staff",
       description: "Create a new staff member",
+      // requestBody: {
+      //   required: true,
+      //   content: {
+      //     "application/json": {
+      //       schema: {
+      //         type: "object",
+      //         required: ["userId", "salleId"],
+      //         properties: {
+      //           userId: { type: "string", format: "uuid" },
+      //           salleId: { type: "string", format: "uuid" },
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
       requestBody: {
         required: true,
         content: {
-          "application/json": {
+          "multipart/form-data": {
             schema: {
               type: "object",
-              required: ["userId", "salleId"],
+              required: [
+                "photo",
+                "nom",
+                "prenom",
+                "email",
+                "tel",
+                "sexe",
+                "password",
+                "salleId"
+              ],
               properties: {
-                userId: { type: "string", format: "uuid" },
+                photo: { type: "string", format: "binary" },
                 salleId: { type: "string", format: "uuid" },
+
+                nom: { type: "string" },
+                prenom: { type: "string" },
+                email: { type: "string", format: "email" },
+                tel: { type: "string" },
+                sexe: { type: "string" },
+                password: { type: "string" },
+
               },
             },
           },

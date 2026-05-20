@@ -11,11 +11,13 @@ export class StaffController {
     }
 
     createStaff = async (req: Request, res: Response) => {
-        const objectStaff = req.body;
+        const file = req.file;
+        const photo = file ? file.path.replace(/\\/g, "/") : null;
+        const objectStaff = { ...req.body, photo } as CreateStaffAttribute;
         const data = await this.staffService.createStaff(objectStaff);
         return sendSuccess(
             res,
-            objectStaff,
+            data,
             "Operation succesfull"
         )
     }
@@ -55,7 +57,7 @@ export class StaffController {
         );
     }
 
-    updateStaff = async (req:Request,res:Response) => {
+    updateStaff = async (req: Request, res: Response) => {
         const id = req.params.id as string;
         const data = req.body as Partial<CreateStaffAttribute>;
         return res.send({
@@ -63,11 +65,11 @@ export class StaffController {
         })
     }
 
-    deleteStaff = async (req:Request,res:Response) => {
-    const id = req.params.id as string;
-    return res.send({
-      data: await this.staffService.deleteStaff(id),
-    });
+    deleteStaff = async (req: Request, res: Response) => {
+        const id = req.params.id as string;
+        return res.send({
+            data: await this.staffService.deleteStaff(id),
+        });
     }
 
 }

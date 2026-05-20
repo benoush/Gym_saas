@@ -4,7 +4,7 @@ import { RoleEnum } from "../../enum/roleEnum"
 
 export interface UserAttributes {
   id: string;
-  photo: string;
+  photo: string | null;
   nom: string;
   prenom: string;
   email: string;
@@ -17,12 +17,12 @@ export interface UserAttributes {
   deletedAt?: Date
 }
 
-export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt"> { }
+export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt" | 'photo'> { }
 
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
   declare id: string;
-  declare photo: string;
+  declare photo: string | null;
   declare nom: string;
   declare prenom: string;
   declare email: string;

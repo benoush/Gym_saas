@@ -1,17 +1,42 @@
 
+import { UserService } from "modules/user/userService";
 import { StaffCreationAttributes } from "../../database/models/staff";
 import { StaffRepository } from "./staffRepository";
 import { CreateStaffAttribute } from "./staffSchema";
+import { RoleEnum } from "enum/roleEnum";
+import { BadRequestError } from "common/errors";
 
 
 export class StaffService {
     private staffRepository: StaffRepository;
+    private userService: UserService;
 
     constructor() {
         this.staffRepository = new StaffRepository();
+        this.userService = new UserService();
     }
-    async createStaff(StaffRequest: StaffCreationAttributes) {
-        return await this.staffRepository.createStaff(StaffRequest);
+    async createStaff(StaffRequest: CreateStaffAttribute) {
+
+        const user = await this.userService.createuser({
+            nom: StaffRequest.nom,
+            prenom: StaffRequest.prenom,
+            email: StaffRequest.email,
+            tel: StaffRequest.tel,
+            sexe: StaffRequest.sexe,
+            password: StaffRequest.password,
+            role: RoleEnum.STAFF,
+            photo: StaffRequest.photo,
+        });
+
+        if (!user) {
+            throw new BadRequestError("Failed to create user for staff");
+        }
+
+
+        return await this.staffRepository.createStaff({
+            userId: user.id,
+            salleId: StaffRequest.salleId,
+        });
     }
     async getStaffById(id: string) {
         return await this.staffRepository.getStaffById(id);

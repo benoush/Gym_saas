@@ -1,10 +1,17 @@
 import z from "zod";
+import { createUserSchema } from "modules/user/userSchema";
 
+const userProprietaireSchema = createUserSchema.omit({ role: true });
 const createProprietaireSchema = z.object({
-  userId: z.coerce.string("userId must be a string"),
-});
+  // userId: z.coerce.string("userId must be a string"),
+  photo : z.string(),
+  recto_carte_identite: z.string(),
+  verso_carte_identite: z.string(),
+  doc_justificatif: z.string(),
+}).extend(userProprietaireSchema.shape);
 
 const updateProprietaireSchema = z.object({
+  photo: z.string().optional(),
   recto_carte_identite: z.string().optional(),
   verso_carte_identite: z.string().optional(),
   doc_justificatif: z.string().optional(),
