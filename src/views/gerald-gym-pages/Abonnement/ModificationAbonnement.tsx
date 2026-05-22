@@ -1,5 +1,6 @@
 'use client'
 
+import CustomTextField from '@/@core/components/mui/TextField'
 import {
   Box,
   Button,
@@ -27,14 +28,14 @@ const ModificationAbonnement = () => {
 
       <CardContent sx={{ p: 6 }}>
         <Box component='form' sx={{ '& .MuiTextField-root': { m: 2 } }}>
-          <TextField
+          <CustomTextField
             fullWidth
             label="Nom de l'abonnement"
             defaultValue='Mensuel'
             required
           />
 
-          <TextField
+          <CustomTextField
             fullWidth
             multiline
             rows={5}
@@ -43,7 +44,7 @@ const ModificationAbonnement = () => {
             required
           />
 
-          <TextField
+          <CustomTextField
             fullWidth
             label='Nombre de séance inclut'
             type='number'
@@ -51,7 +52,7 @@ const ModificationAbonnement = () => {
             required
           />
 
-          <TextField
+          <CustomTextField
             fullWidth
             label='Délai de validité (jours)'
             type='number'
@@ -67,13 +68,13 @@ const ModificationAbonnement = () => {
             required
           />
 
-          <TextField
+          <CustomTextField
             fullWidth
             label='Message par rapport au prix (optionnel)'
             defaultValue='Le plan standard pour ceux qui veulent économiser'
           />
 
-          <TextField
+          <CustomTextField
             fullWidth
             select
             label="Salle autorisé d'accès (optionnel)"
@@ -84,7 +85,7 @@ const ModificationAbonnement = () => {
                 {option.name}
               </MenuItem>
             ))}
-          </TextField>
+          </CustomTextField>
 
           <Box m={4} display='flex' justifyContent='flex-end'>
             <div className='flex gap-3'>

@@ -81,7 +81,7 @@ const schema = object({
   password: pipe(
     string(),
     nonEmpty('This field is required'),
-    minLength(5, 'Password must be at least 5 characters long')
+    // minLength(5, 'Password must be at least 5 characters long')
   )
 })
 
@@ -114,8 +114,8 @@ const Login = ({ mode }: { mode: SystemMode }) => {
   } = useForm<FormData>({
     resolver: valibotResolver(schema),
     defaultValues: {
-      email: 'admin@vuexy.com',
-      password: 'admin'
+      email: 'aze@example.com',
+      password: '123'
     }
   })
 
@@ -135,6 +135,8 @@ const Login = ({ mode }: { mode: SystemMode }) => {
       password: data.password,
       redirect: false
     })
+    console.log(res);
+
 
     if (res && res.ok && res.error === null) {
       // Vars
@@ -181,7 +183,7 @@ const Login = ({ mode }: { mode: SystemMode }) => {
           <form
             noValidate
             autoComplete='off'
-            action={() => {}}
+            action={() => { }}
             onSubmit={handleSubmit(onSubmit)}
             className='flex flex-col gap-6'
           >

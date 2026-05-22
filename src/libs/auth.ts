@@ -5,6 +5,8 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
 import { PrismaClient } from '@prisma/client'
 import type { NextAuthOptions } from 'next-auth'
 import type { Adapter } from 'next-auth/adapters'
+import { AuthService } from '@/services/auth/AuthService'
+import { UserType } from '@/types/models/User'
 
 const prisma = new PrismaClient()
 
@@ -33,36 +35,18 @@ export const authOptions: NextAuthOptions = {
          * You can also use the `req` object to obtain additional parameters (i.e., the request IP address)
          */
         const { email, password } = credentials as { email: string; password: string }
+        console.log(email, password);
 
-        try {
-          // ** Login API Call to match the user credentials and receive user data in response along with his role
-          const res = await fetch(`${process.env.API_URL}/login`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-          })
+        const res = await AuthService.login({ email, password })
+        console.log(res);
 
-          const data = await res.json()
+        if (res.status === 200) {
 
-          if (res.status === 401) {
-            throw new Error(JSON.stringify(data))
-          }
-
-          if (res.status === 200) {
-            /*
-             * Please unset all the sensitive information of the user either from API response or before returning
-             * user data below. Below return statement will set the user object in the token and the same is set in
-             * the session which will be accessible all over the app.
-             */
-            return data
-          }
-
-          return null
-        } catch (e: any) {
-          throw new Error(e.message)
+          return res?.data.data
         }
+
+        return null
+
       }
     }),
 
@@ -113,12 +97,13 @@ export const authOptions: NextAuthOptions = {
         token.name = user.name
       }
 
-      return token
+      return { ...token, ...user }
     },
     async session({ session, token }) {
       if (session.user) {
         // ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
-        session.user.name = token.name
+        session.user = token.user as UserType
+        session.token = token.access_token as string
       }
 
       return session
