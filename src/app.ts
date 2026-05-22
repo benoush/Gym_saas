@@ -1,9 +1,9 @@
-import express , {Express,Request,Response} from "express";
+import express, { Express, Request, Response } from "express";
 import env from "config/env";
 import cors from "cors";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "swagger";
-import {notFoundHandler,errorHandler} from "modules/middleware/error.middleware"
+import { notFoundHandler, errorHandler } from "modules/middleware/error.middleware"
 import proprietaireRoute from "modules/proprietaire/proprietaireRoute";
 import userRoute from "modules/user/userRoute";
 import salleRoute from "modules/salle/salleRoute";
@@ -17,11 +17,13 @@ import factureRoute from "modules/facture/factureRoute";
 import paiementRoute from "modules/paiement/paiementRoute";
 import notificationRoute from "modules/notification/notificationRoute";
 import authRoute from "modules/auth/authRoute";
-
+import path from "path";
 
 const app: Express = express();
 const API_PREFIX = env.API_PREFIX;
 
+console.log(`Starting server in ${env.NODE_ENV} mode...  ${path.join(__dirname, '..', 'uploads')}`);
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 // Parse JSON bodies
 app.use(express.json({ limit: '10mb' }));

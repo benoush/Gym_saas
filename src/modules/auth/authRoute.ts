@@ -6,13 +6,13 @@ import { RoleEnum } from "../../enum/roleEnum";
 
 const router: Router = Router();
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
 
 router.post("/register", authController.register);
 router.post("/login", authController.login);
 
-router.get("/me", authMiddleware, authController.getMe);
+router.get("/me", authController.getMe);
 
 // router.get(
 //   "/admin",
