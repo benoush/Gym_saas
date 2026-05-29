@@ -6,14 +6,14 @@ import { methodePaiement } from "../../enum/methodePaiement"
 export interface PaiementAttributes {
     id: string;
     factureId: string;
-    statut: statutPaiement;
+    statut?: statutPaiement;
     methode: methodePaiement;
     num_transaction: string;
     createdAt?: Date;
     updatedAt?: Date
 }
 
-export interface PaiementCreationAttributes extends Optional<PaiementAttributes, "id" | "createdAt" | "updatedAt"> { }
+export interface PaiementCreationAttributes extends Optional<PaiementAttributes, "id" | "statut" | "createdAt" | "updatedAt"> { }
 
 class Paiement extends Model<PaiementAttributes, PaiementCreationAttributes> implements PaiementAttributes {
     declare id: string;
@@ -46,7 +46,8 @@ const initModelPaiement = (sequelize: Sequelize) => {
             },
             statut: {
                 type: DataTypes.ENUM(...Object.values(statutPaiement)),
-                allowNull: false
+                allowNull: false,
+                defaultValue: statutPaiement.EN_ATTENTE
             },
             methode: {
                 type: DataTypes.ENUM(...Object.values(methodePaiement)),

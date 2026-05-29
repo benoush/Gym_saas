@@ -45,4 +45,29 @@ export class SalleRepository {
         await salle.destroy();
         return true;
     }
+    async getSalleByProprietaireId(proprietaireId: string) {
+        return this.salle.findOne({
+            where: { proprietaireId: proprietaireId },
+            // include: [
+            //     {
+            //         model: User,
+            //         as: 'users',
+            //         where: { id: proprietaireId },
+            //     },
+            // ],
+        });
+    }
+
+    async getSalleByClientId(clientId: string) {
+        return this.salle.findOne({
+            where: { clientId: clientId },
+            // include: [
+            //     {
+            //         model: User,
+            //         as: 'users',
+            //         where: { id: clientId },
+            //     },
+            // ],
+        });
+    }
 }

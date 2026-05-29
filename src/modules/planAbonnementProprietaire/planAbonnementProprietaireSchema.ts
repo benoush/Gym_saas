@@ -6,7 +6,7 @@ const createPlanAbonnementProprietaireSchema = z.object({
     error: `Le type doit être l'un des suivants : ${Object.values(typePlanAbonnementProprietaire).join(", ")}`,
   }),
   prix: z.number().positive("prix must be a positive number"),
-  description: z.string().max(255, "description must be at most 255 characters"),
+
 });
 
 
@@ -18,6 +18,7 @@ const updatePlanAbonnementProprietaireSchema = z.object({
   type: z.nativeEnum(typePlanAbonnementProprietaire, {
     error: `Le type doit être l'un des suivants : ${Object.values(typePlanAbonnementProprietaire).join(", ")}`,
   }),
+
 });
 
 const PlanAbonnementProprietairePaginationSchema = z.object({

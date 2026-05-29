@@ -2,6 +2,8 @@ import http from 'http';
 import app from './app';
 import env from 'config/env';
 import {testConnection,syncDatabase} from "database/sequelize";
+import { startCronJobs } from "./cron/cronjobs";
+
 
 let server: http.Server;
 
@@ -28,3 +30,7 @@ const startServer = async () => {
 };
 
 startServer();
+
+startCronJobs();
+
+export default server;

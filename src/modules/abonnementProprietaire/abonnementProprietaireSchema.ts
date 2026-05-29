@@ -3,16 +3,13 @@ import { StatutAbonnementEnum } from "../../enum/statutAbonnementEnum";
 import { typeAbonnementSaas } from "../../enum/typeAbonnementSaas";
 
 const createAbonnementProprietaireSchema = z.object({
-    proprietaireId: z.string().uuid("ProprietaireId must be a valid UUID"),
-    type: z.nativeEnum(typeAbonnementSaas, {
-        message: `Le type doit être l'un des suivants : ${Object.values(typeAbonnementSaas).join(", ")}`,
-    }),
-    statut: z.nativeEnum(StatutAbonnementEnum, {
-        message: `Le statut doit être l'un des suivants : ${Object.values(StatutAbonnementEnum).join(", ")}`,
-    }).optional(),
-    description: z.string().max(255, "La description ne doit pas dépasser 255 caractères"),
-    nbre_sceance: z.number().min(0, "Le nombre de séances doit être un nombre entier positif"),
-    montant: z.number().min(0, "Le montant doit être un nombre positif"),});
+  proprietaireId: z.string().uuid("ProprietaireId must be a valid UUID"),
+  planId: z.string().uuid("PlanId must be a valid UUID"),
+  type: z.nativeEnum(typeAbonnementSaas, {
+    message: `Le type doit être l'un des suivants : ${Object.values(typeAbonnementSaas).join(", ")}`,
+  }),
+  // montant: z.number().min(0, "Le montant doit être un nombre positif"),
+});
 
 
 const AbonnementProprietaireIdSchema = z.object({
@@ -22,7 +19,7 @@ const AbonnementProprietaireIdSchema = z.object({
 const updateAbonnementProprietaireSchema = z.object({
   statut: z.nativeEnum(StatutAbonnementEnum, {
     message: `Le statut doit être l'un des suivants : ${Object.values(StatutAbonnementEnum).join(", ")}`,
-   }),
+  }),
 });
 
 const AbonnementProprietairePaginationSchema = z.object({

@@ -9,7 +9,7 @@ const paiementController = new PaiementController();
 
 
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 router.post("", validate(createPaiementSchema, "body"), paiementController.createPaiement);
 router.get("", validate(PaiementPaginationSchema, "query"), paiementController.getPaiementPaginated);
 router.patch("/statut/:id", validate(PaiementIdSchema, "params"), validate(updatePaiementStatutSchema, "body"), paiementController.updateStatut);

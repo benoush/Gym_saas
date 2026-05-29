@@ -1,4 +1,4 @@
-import { Model, ModelStatic } from "sequelize";
+import { Model, ModelStatic, Op } from "sequelize";
 import { AbonnementClient, AbonnementClientCreationAttributes } from "../../database/models/abonnementClient";
 import { NotFoundError } from "../../common/errors/index";
 import { User } from "../../database/models/user";
@@ -67,4 +67,31 @@ export class AbonnementClientRepository {
         await AbonnementClient.destroy();
         return true;
     }
+
+    // ─── Expirer tous les abonnements dont finAt est dépassé ──────────────────
+        async expirerAbonnementsDepasses(): Promise<number> {
+            const [nbAffectes] = await this.abonnementClient.update(
+                { statut: StatutAbonnementEnum.EXPIRE },
+                {
+                    where: {
+                        statut: StatutAbonnementEnum.ACTIF,
+                        finAt: { [Op.lt]: new Date() }, // finAt < maintenant
+                    },
+                }
+            );
+            return nbAffectes;
+        }
+    
+        async getAbonnementByClientId(clientId: string) {
+            return this.abonnementClient.findOne({
+                where: { clientId: clientId },
+                // include: [
+                //     {
+                //         model: User,
+                //         as: 'users',
+                //         where: { id: clientId },
+                //     },
+                // ],
+            });
+        }
 }

@@ -10,6 +10,7 @@ const abonnementProprietaireSchema: OpenAPIV3.ComponentsObject["schemas"] = {
     properties: {
       id: { type: "string", format: "uuid" },
       proprietaireId: { type: "string", format: "uuid" },
+      planId: { type: "string", format: "uuid" },
       type: {
         type: "string",
         enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
@@ -19,11 +20,11 @@ const abonnementProprietaireSchema: OpenAPIV3.ComponentsObject["schemas"] = {
         type: "string",
         enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
       },
-      description: { type: "string" },
-      nbre_sceance: { type: "number" },
       montant: { type: "number" },
       createdAt: { type: "string", format: "date-time" },
       updatedAt: { type: "string", format: "date-time" },
+        finAt: { type: "string", format: "date-time" },
+      deleteAt: { type: "string", format: "date-time" },
     },
   },
 };
@@ -41,15 +42,14 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["proprietaireId", "type", "description", "nbre_sceance", "montant"],
+              required: ["proprietaireId", "planId", "type", "montant"],
               properties: {
                 proprietaireId: { type: "string", format: "uuid" },
+                planId: { type: "string", format: "uuid" },
                 type: {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
                 },
-                description: { type: "string", maxLength: 255 },
-                nbre_sceance: { type: "number", minimum: 0 },
                 montant: { type: "number", minimum: 0 },
               },
             },
@@ -175,14 +175,14 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
+              required: ["proprietaireId", "planId", "type", "montant"],
               properties: {
                 proprietaireId: { type: "string", format: "uuid" },
+                planId: { type: "string", format: "uuid" },
                 type: {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
                 },
-                description: { type: "string", maxLength: 255 },
-                nbre_sceance: { type: "number", minimum: 0 },
                 montant: { type: "number", minimum: 0 },
               },
             },

@@ -9,9 +9,9 @@ const salleController = new SalleController();
 
 
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
-router.post("",isAdmin, validate(createsalleSchema, "body"), salleController.createSalle);
+router.post("", validate(createsalleSchema, "body"), salleController.createSalle);
 router.get("", validate(sallePaginationSchema, "query"), salleController.getSallePaginated);
 router.get("/:id", validate(salleIdSchema, "params"), salleController.getSalleById);
 router.patch("/:id", isAdmin, validate(salleIdSchema, "params"), salleController.updateSalle);

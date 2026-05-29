@@ -40,13 +40,10 @@ const paiementPath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["factureId", "statut", "methode", "num_transaction"],
+              required: ["factureId", "methode", "num_transaction"],
               properties: {
                 factureId: { type: "string", format: "uuid" },
-                statut: {
-                  type: "string",
-                  enum: ["EN_ATTENTE", "PAYE", "ECHOUE", "REMBOURSE"],
-                },
+               
                 methode: {
                   type: "string",
                   enum: ["ESPECES", "CARTE", "VIREMENT", "MOBILE_MONEY"],

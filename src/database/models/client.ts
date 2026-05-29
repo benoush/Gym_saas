@@ -11,7 +11,7 @@ export interface ClientAttributes {
   deleteAt?: Date
 }
 
-export interface ClientCreationAttributes extends Optional<ClientAttributes, "id" | "statut" |"createdAt" | "updatedAt" | "deleteAt"> { }
+export interface ClientCreationAttributes extends Optional<ClientAttributes, "id" | "statut" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
 class Client extends Model<ClientAttributes, ClientCreationAttributes> implements ClientAttributes {
@@ -65,6 +65,7 @@ const initModelClient = (sequelize: Sequelize) => {
 Client.associate = (models: any) => {
   Client.hasOne(models.AbonnementClient, { foreignKey: 'clientId', as: 'abonnementClients' });
   Client.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
+  Client.hasMany(models.Facture, { foreignKey: 'clientId', as: 'factures' });
 }
 
 export { Client, initModelClient }

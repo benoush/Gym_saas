@@ -1,5 +1,5 @@
 
-import { typePlanSaas } from "../../enum/typePlanAbonnementProprietaire";
+import { typePlanAbonnementProprietaire } from "../../enum/typePlanAbonnementProprietaire";
 import { PlanAbonnementProprietaireRepository } from "./planAbonnementProprietaireRepository";
 import { PlanAbonnementProprietaireIdAttribute, CreatePlanAbonnementProprietaireAttribute } from "./planAbonnementProprietaireSchema";
 
@@ -19,7 +19,7 @@ export class PlanAbonnementProprietaireService {
     async getPlanAbonnementProprietairePaginated(page: number, limit: number) {
         return await this.planAbonnementProprietaireRepository.getPlanAbonnementProprietairePaginated(page, limit);
     }
-    async updateType(id: string, type: typePlanSaas) {
+    async updateType(id: string, type: typePlanAbonnementProprietaire) {
         return this.planAbonnementProprietaireRepository.updateType(id, type);
     }
     async updatePlanAbonnementProprietaire(id: string, updatedData: Partial<PlanAbonnementProprietaireIdAttribute>) {

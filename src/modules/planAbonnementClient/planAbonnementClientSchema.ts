@@ -2,12 +2,11 @@ import z from "zod";
 import { typePlanAbonnementClient } from "../../enum/typePlanAbonnementClient";
 
 const createPlanAbonnementClientSchema = z.object({
-  salleId: z.string().uuid("salleId must be a valid UUID"),
   type: z.nativeEnum(typePlanAbonnementClient, {
     error: `Le type doit être l'un des suivants : ${Object.values(typePlanAbonnementClient).join(", ")}`,
   }),
   prix: z.number().positive("prix must be a positive number"),
-  description: z.string().max(255, "description must be at most 255 characters"),
+
 });
 
 

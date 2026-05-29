@@ -5,15 +5,16 @@ import { stat } from "node:fs";
 
 const createAbonnementClientSchema = z.object({
     clientId: z.string().uuid("clientId must be a valid UUID"),
+    salleId: z.string().uuid("salleId must be a valid UUID"), 
+    planId: z.string().uuid("planId must be a valid UUID"),
     type: z.nativeEnum(typeAbonnementSalle, {
         message: `Le type doit être l'un des suivants : ${Object.values(typeAbonnementSalle).join(", ")}`,
     }),
-    statut: z.nativeEnum(StatutAbonnementEnum, {
-        message: `Le statut doit être l'un des suivants : ${Object.values(StatutAbonnementEnum).join(", ")}`,
-    }),
-    description: z.string().max(255, "La description ne doit pas dépasser 255 caractères"),
-    nbre_sceance: z.string().regex(/^\d+$/, "Le nombre de séances doit être un nombre entier"),
-    montant: z.string().regex(/^\d+$/, "Le montant doit être un nombre entier"),
+    // statut: z.nativeEnum(StatutAbonnementEnum, {
+    //     message: `Le statut doit être l'un des suivants : ${Object.values(StatutAbonnementEnum).join(", ")}`,
+    // }),
+    nbre_sceance: z.number().min(0, "Le nombre de séances doit être un nombre entier positif"),
+    // montant: z.number().min(0, "Le montant doit être un nombre entier positif"),
 });
 
 
@@ -31,9 +32,8 @@ const updateAbonnementClientDataSchema = z.object({
     type: z.nativeEnum(typeAbonnementSalle, {
         message: `Le type doit être l'un des suivants : ${Object.values(typeAbonnementSalle).join(", ")}`,
     }).optional(),
-    description: z.string().max(255, "La description ne doit pas dépasser 255 caractères").optional(),
     nbre_sceance: z.number().min(0, "Le nombre de séances doit être un nombre entier positif").optional(),  
-    montant: z.number().min(0, "Le montant doit être un nombre entier positif").optional(),
+    // montant: z.number().min(0, "Le montant doit être un nombre entier positif").optional(),
 });
 
 const AbonnementClientPaginationSchema = z.object({

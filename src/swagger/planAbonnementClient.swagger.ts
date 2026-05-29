@@ -1,3 +1,4 @@
+import { typePlanAbonnementClient } from "enum/typePlanAbonnementClient";
 import { OpenAPIV3 } from "openapi-types";
 
 const planAbonnementClientTags: OpenAPIV3.TagObject = {
@@ -8,16 +9,19 @@ const planAbonnementClientTags: OpenAPIV3.TagObject = {
 const planAbonnementClientSchema: OpenAPIV3.ComponentsObject["schemas"] = {
   PlanAbonnementClientResponse: {
     properties: {
-        id: { type: "string", format: "uuid" },
-        salleId: { type: "string", format: "uuid" },
-        type: { 
-          type: "string", 
-          enum: ["BASIC", "PRO", "PREMIUM"], 
-          description: "Type du plan abonnement client" },
-        prix: { type: "number", format: "float" },
-        description: { type: "string" },
-        createdAt: { type: "string", format: "date-time" },
-        updatedAt: { type: "string", format: "date-time" },
+       id: { type: "string", format: "uuid" },
+       clientId: { type: "string", format: "uuid" },
+           type: {
+             type: "string",
+             enum: ["BASIC", "PRO", "PREMIUM"],
+             description: "Type du plan abonnement client",
+           },
+           prix: { type: "number", format: "float" },
+           duree: { type: "number" },
+           uniteDuree: { type: "string", enum: ["JOURS", "MOIS", "ANNEES"] },
+           createdAt: { type: "string", format: "date-time" },
+           updatedAt: { type: "string", format: "date-time" },
+           deleteAt: { type: "string", format: "date-time" },
     },
   },
 };
@@ -35,15 +39,20 @@ const planAbonnementClientPath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["salleId", "type", "prix", "description"],
+              required: ["clientId", "prix", "duree", "uniteDuree", "type"],
               properties: {
-                salleId: { type: "string", format: "uuid" },
                 type: { 
-                  type: "string", 
-                  enum: ["BASIC", "PRO", "PREMIUM"], 
-                  description: "Type du plan abonnement client" },
-                prix: { type: "number", format: "float" },
-                description: { type: "string" },
+                  type: "string",
+                  enum: ["BASIC", "PRO", "PREMIUM"],
+                },
+                prix: { type: "number", minimum: 0 },
+                duree: { type: "integer", minimum: 1 },
+                uniteDuree: {
+                  type: "string",
+                  enum: ["JOURS", "MOIS", "ANNEES"],
+                  description: "Unité de durée du plan abonnement client",
+                },
+                clientId: { type: "string", format: "uuid" },
               },
             },
           },

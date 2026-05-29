@@ -1,4 +1,5 @@
 export enum typeAbonnementSaas {
+    MENSUEL="MENSUEL",
     TRIMESTRIEL="TRIMESTRIEL",
     SEMESTRIEL="SEMESTRIEL",
     ANNUEL="ANNUEL"

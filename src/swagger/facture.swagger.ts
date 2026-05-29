@@ -9,12 +9,16 @@ const factureSchema: OpenAPIV3.ComponentsObject["schemas"] = {
   FactureResponse: {
     properties: {
       id: { type: "string", format: "uuid" },
-      clientId: { type: "string", format: "uuid" },
-      proprietaireId: { type: "string", format: "uuid" },
-      AbonnementClientId: { type: "string", format: "uuid" },
-      AbonnementProprietaireId: { type: "string", format: "uuid" },
+      typeFacture: {
+        type: "string",
+        enum: ["CLIENT", "PROPRIETAIRE"],
+      },
+      montant: { type: "string" },
       salleId: { type: "string", format: "uuid" },
-      montant: { type: "number", format: "float", minimum: 0 },
+      clientId: { type: "string", format: "uuid", nullable: true },
+      AbonnementClientId: { type: "string", format: "uuid", nullable: true },
+      proprietaireId: { type: "string", format: "uuid", nullable: true },
+      AbonnementProprietaireId: { type: "string", format: "uuid", nullable: true },
       createdAt: { type: "string", format: "date-time" },
       updatedAt: { type: "string", format: "date-time" },
     },
@@ -26,29 +30,32 @@ const facturePath: OpenAPIV3.PathsObject = {
     post: {
       tags: ["Facture"],
       summary: "Create a facture",
-      description: "Create a new facture",  
-      security: [{ bearerAuth: [] }],
+      description: "Facture CLIENT : fournir clientId + AbonnementClientId. Facture PROPRIETAIRE : fournir proprietaireId + AbonnementProprietaireId",
       requestBody: {
         required: true,
         content: {
           "application/json": {
             schema: {
               type: "object",
-              required: [
-                "clientId",
-                "proprietaireId",
-                "AbonnementClientId",
-                "AbonnementProprietaireId",
-                "salleId",
-                "montant",
-              ],
+              required: ["typeFacture", "montant", "salleId"],
+              example: {
+                typeFacture: "CLIENT",
+                montant: "10000",
+                salleId: "550e8400-e29b-41d4-a716-446655440000",
+                clientId: "550e8400-e29b-41d4-a716-446655440001",
+                AbonnementClientId: "550e8400-e29b-41d4-a716-446655440002",
+              },
               properties: {
-                clientId: { type: "string", format: "uuid" },
-                proprietaireId: { type: "string", format: "uuid" },
-                AbonnementClientId: { type: "string", format: "uuid" },
-                AbonnementProprietaireId: { type: "string", format: "uuid" },
+                typeFacture: {
+                  type: "string",
+                  enum: ["CLIENT", "PROPRIETAIRE"],
+                },
+                montant: { type: "string" },
                 salleId: { type: "string", format: "uuid" },
-                montant: { type: "number", format: "float", minimum: 0 },
+                clientId: { type: "string", format: "uuid", description: "Requis si typeFacture = CLIENT" },
+                AbonnementClientId: { type: "string", format: "uuid", description: "Requis si typeFacture = CLIENT" },
+                proprietaireId: { type: "string", format: "uuid", description: "Requis si typeFacture = PROPRIETAIRE" },
+                AbonnementProprietaireId: { type: "string", format: "uuid", description: "Requis si typeFacture = PROPRIETAIRE" },
               },
             },
           },
@@ -56,7 +63,7 @@ const facturePath: OpenAPIV3.PathsObject = {
       },
       responses: {
         "201": {
-          description: "Facture created successfully",
+          description: "Facture créée avec succès",
           content: {
             "application/json": {
               schema: {
@@ -69,27 +76,18 @@ const facturePath: OpenAPIV3.PathsObject = {
             },
           },
         },
-        "400": { description: "Invalid input" },
-        "404": { description: "Client, Proprietaire or Salle not found" },
+        "400": { description: "Champs manquants selon typeFacture" },
+        "404": { description: "Ressource introuvable" },
+        "422": { description: "Données invalides" },
       },
     },
     get: {
       tags: ["Facture"],
       summary: "Get factures with pagination",
-      description: "Get all factures",
       parameters: [
-        {
-          name: "page",
-          in: "query",
-          schema: { type: "integer", default: 1 },
-          description: "Page number",
-        },
-        {
-          name: "limit",
-          in: "query",
-          schema: { type: "integer", default: 10 },
-          description: "Number of items per page",
-        },
+        { name: "page", in: "query", schema: { type: "integer", default: 1 } },
+        { name: "limit", in: "query", schema: { type: "integer", default: 10 } },
+        { name: "typeFacture", in: "query", schema: { type: "string", enum: ["CLIENT", "PROPRIETAIRE"] } },
       ],
       responses: {
         "200": {
@@ -103,10 +101,7 @@ const facturePath: OpenAPIV3.PathsObject = {
                   data: {
                     type: "object",
                     properties: {
-                      rows: {
-                        type: "array",
-                        items: { $ref: "#/components/schemas/FactureResponse" },
-                      },
+                      rows: { type: "array", items: { $ref: "#/components/schemas/FactureResponse" } },
                       count: { type: "integer" },
                       page: { type: "integer" },
                       limit: { type: "integer" },
@@ -125,30 +120,11 @@ const facturePath: OpenAPIV3.PathsObject = {
     get: {
       tags: ["Facture"],
       summary: "Get facture by ID",
-      description: "Retrieve a facture by its unique id",
-      parameters: [
-        {
-          name: "id",
-          in: "path",
-          required: true,
-          schema: { type: "string", format: "uuid" },
-          description: "The unique identifier of the facture",
-        },
-      ],
+      parameters: [{ name: "id", in: "path", required: true, schema: { type: "string", format: "uuid" } }],
       responses: {
         "200": {
           description: "Facture found",
-          content: {
-            "application/json": {
-              schema: {
-                type: "object",
-                properties: {
-                  success: { type: "boolean" },
-                  data: { $ref: "#/components/schemas/FactureResponse" },
-                },
-              },
-            },
-          },
+          content: { "application/json": { schema: { type: "object", properties: { success: { type: "boolean" }, data: { $ref: "#/components/schemas/FactureResponse" } } } } },
         },
         "404": { description: "Facture not found" },
       },
@@ -156,49 +132,22 @@ const facturePath: OpenAPIV3.PathsObject = {
     patch: {
       tags: ["Facture"],
       summary: "Update facture by ID",
-      description: "Update the information of a facture by its unique id",
-      security: [{ bearerAuth: [] }],
-      parameters: [
-        {
-          name: "id",
-          in: "path",
-          required: true,
-          schema: { type: "string", format: "uuid" },
-          description: "The unique identifier of the facture",
-        },
-      ],
+      parameters: [{ name: "id", in: "path", required: true, schema: { type: "string", format: "uuid" } }],
       requestBody: {
         required: true,
         content: {
           "application/json": {
             schema: {
               type: "object",
-              properties: {
-                clientId: { type: "string", format: "uuid" },
-                proprietaireId: { type: "string", format: "uuid" },
-                AbonnementClientId: { type: "string", format: "uuid" },
-                AbonnementProprietaireId: { type: "string", format: "uuid" },
-                salleId: { type: "string", format: "uuid" },
-                montant: { type: "number", format: "float", minimum: 0 },
-              },
+              properties: { montant: { type: "string" } },
             },
           },
         },
       },
       responses: {
         "200": {
-          description: "Facture updated successfully",
-          content: {
-            "application/json": {
-              schema: {
-                type: "object",
-                properties: {
-                  success: { type: "boolean" },
-                  data: { $ref: "#/components/schemas/FactureResponse" },
-                },
-              },
-            },
-          },
+          description: "Facture updated",
+          content: { "application/json": { schema: { type: "object", properties: { success: { type: "boolean" }, data: { $ref: "#/components/schemas/FactureResponse" } } } } },
         },
         "404": { description: "Facture not found" },
       },
@@ -206,17 +155,7 @@ const facturePath: OpenAPIV3.PathsObject = {
     delete: {
       tags: ["Facture"],
       summary: "Delete facture by ID",
-      description: "Soft delete a facture by its unique id",
-      security: [{ bearerAuth: [] }],
-      parameters: [
-        {
-          name: "id",
-          in: "path",
-          required: true,
-          schema: { type: "string", format: "uuid" },
-          description: "The unique identifier of the facture",
-        },
-      ],
+      parameters: [{ name: "id", in: "path", required: true, schema: { type: "string", format: "uuid" } }],
       responses: {
         "200": { description: "Facture deleted successfully" },
         "404": { description: "Facture not found" },

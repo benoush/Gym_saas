@@ -15,7 +15,7 @@ export class AbonnementClientController {
         const data = await this.abonnementClientService.createAbonnementClient(objectAbonnementClient);
         return sendSuccess(
             res,
-            objectAbonnementClient,
+            data,
             "Operation succesfull"
         )
     }

@@ -7,10 +7,10 @@ import { authMiddleware, isStaff } from "../middleware/auth.middleware";
 const router: Router = Router();
 const abonnementClientController = new AbonnementClientController();
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 
 
-router.use(authMiddleware);
+// router.use(authMiddleware);
 router.post("", validate(createAbonnementClientSchema, "body"), abonnementClientController.createAbonnementClient);
 router.get("", validate(AbonnementClientPaginationSchema, "query"), abonnementClientController.getAbonnementClientPaginated);
 router.get("/:id", validate(AbonnementClientIdSchema, "params"), abonnementClientController.getAbonnementClientById);

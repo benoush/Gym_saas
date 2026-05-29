@@ -15,7 +15,7 @@ export class AbonnementProprietaireController {
         const data = await this.abonnementProprietaireService.createAbonnementProprietaire(objectAbonnementProprietaire);
         return sendSuccess(
             res,
-            objectAbonnementProprietaire,
+            data,
             "Operation succesfull"
         )
     }
@@ -55,18 +55,18 @@ export class AbonnementProprietaireController {
         );
     }
 
-      updateStatut = async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const id = req.params.id as string;
-        const { statut } = req.body;
-        const data = await this.abonnementProprietaireService.updateStatut(id, statut);
-        return sendSuccess(res, data, "Statut mis à jour avec succès", 200);
-      } catch (error) {
-        next(error);
-      }
-  };
+    updateStatut = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const id = req.params.id as string;
+            const { statut } = req.body;
+            const data = await this.abonnementProprietaireService.updateStatut(id, statut);
+            return sendSuccess(res, data, "Statut mis à jour avec succès", 200);
+        } catch (error) {
+            next(error);
+        }
+    };
 
-    updateAbonnementProprietaire = async (req:Request,res:Response) => {
+    updateAbonnementProprietaire = async (req: Request, res: Response) => {
         const id = req.params.id as string;
         const data = req.body as Partial<AbonnementProprietaireIdAttribute>;
         return res.send({
@@ -74,11 +74,11 @@ export class AbonnementProprietaireController {
         })
     }
 
-    deleteAbonnementProprietaire = async (req:Request,res:Response) => {
-    const id = req.params.id as string;
-    return res.send({
-      data: await this.abonnementProprietaireService.deleteAbonnementProprietaire(id),
-    });
+    deleteAbonnementProprietaire = async (req: Request, res: Response) => {
+        const id = req.params.id as string;
+        return res.send({
+            data: await this.abonnementProprietaireService.deleteAbonnementProprietaire(id),
+        });
     }
 
 }

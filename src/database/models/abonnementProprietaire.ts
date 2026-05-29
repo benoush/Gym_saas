@@ -6,27 +6,29 @@ import { StatutAbonnementEnum } from "enum/statutAbonnementEnum";
 export interface AbonnementProprietaireAttributes {
     id: string;
     proprietaireId: string;
+    planId: string;
     type: typeAbonnementSaas;
     statut: StatutAbonnementEnum;
-    description: string;
-    nbre_sceance: number;
     montant: number;
-    debutAt?: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
     finAt?: Date;
+    deleteAt?: Date;
 }
 
-export interface AbonnementProprietaireCreationAttributes extends Optional<AbonnementProprietaireAttributes, "id" | "debutAt" | "finAt"> { }
+export interface AbonnementProprietaireCreationAttributes extends Optional<AbonnementProprietaireAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 class AbonnementProprietaire extends Model<AbonnementProprietaireAttributes, AbonnementProprietaireCreationAttributes> implements AbonnementProprietaireAttributes {
     declare id: string;
     declare proprietaireId: string;
+    declare planId: string;
     declare type: typeAbonnementSaas;
     declare statut: StatutAbonnementEnum;
-    declare description: string;
-    declare nbre_sceance: number;
     declare montant: number;
-    declare readonly debutAt?: Date;
-    declare readonly finAt?: Date;
+    declare readonly createdAt?: Date;
+    declare readonly updatedAt?: Date;
+    declare finAt?: Date;
+    declare readonly deleteAt?: Date;
     declare static associate: (models: any) => void;
 
 }
@@ -48,6 +50,15 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
                     key: 'id',
                 }
             },
+            planId: {
+                type: DataTypes.UUID,
+                allowNull: false,
+                field: 'planId',
+                references: {
+                    model: 'PlanAbonnementProprietaires',
+                    key: 'id',
+                }
+            },
             type: {
                 type: DataTypes.ENUM(...Object.values(typeAbonnementSaas)),
                 allowNull: false,
@@ -55,19 +66,15 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
             statut: {
                 type: DataTypes.ENUM(...Object.values(StatutAbonnementEnum)),
                 allowNull: false,
-                defaultValue: StatutAbonnementEnum.ACTIF
-            },
-            description: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            nbre_sceance: {
-                type: DataTypes.INTEGER,
-                allowNull: false
+                defaultValue: StatutAbonnementEnum.INNACTIF
             },
             montant: {
                 type: DataTypes.INTEGER,
                 allowNull: false
+            },
+            finAt: {
+                type: DataTypes.DATE,
+                allowNull: true
             }
         },
         {
@@ -83,6 +90,7 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
 
 AbonnementProprietaire.associate = (models: any) => {
     AbonnementProprietaire.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
+    AbonnementProprietaire.belongsTo(models.PlanAbonnementProprietaire, { foreignKey: 'planId', as: 'planAbonnementProprietaires' });
     AbonnementProprietaire.hasOne(models.Facture, { foreignKey: 'abonnementProprietaireId', as: 'factures' });
 }
 

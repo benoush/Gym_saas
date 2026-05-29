@@ -76,4 +76,5 @@ Proprietaire.associate = (models: any) => {
   Proprietaire.hasMany(models.Facture, { foreignKey: 'proprietaireId', as: 'factures' });
   Proprietaire.hasMany(models.Salle, { foreignKey: 'proprietaireId', as: 'salles' });
   Proprietaire.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
+  Proprietaire.hasOne(models.AbonnementProprietaire, { foreignKey: 'proprietaireId', as: 'abonnementProprietaires' });
 }

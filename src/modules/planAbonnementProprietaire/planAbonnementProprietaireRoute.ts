@@ -11,8 +11,8 @@ const planAbonnementProprietaireController = new PlanAbonnementProprietaireContr
 
 
 
-router.use(authMiddleware);
-router.post("",isAdmin, validate(createPlanAbonnementProprietaireSchema, "body"), planAbonnementProprietaireController.createPlanAbonnementProprietaire);
+// router.use(authMiddleware);
+router.post("", validate(createPlanAbonnementProprietaireSchema, "body"), planAbonnementProprietaireController.createPlanAbonnementProprietaire);
 router.get("", validate(PlanAbonnementProprietairePaginationSchema, "query"), planAbonnementProprietaireController.getPlanAbonnementProprietairePaginated);
 router.patch("/type/:id", isAdmin, validate(PlanAbonnementProprietaireIdSchema, "params"), validate(updatePlanAbonnementClientSchema, "body"), planAbonnementProprietaireController.updateType);
 router.get("/:id", validate(PlanAbonnementProprietaireIdSchema, "params"), planAbonnementProprietaireController.getPlanAbonnementProprietaireById);

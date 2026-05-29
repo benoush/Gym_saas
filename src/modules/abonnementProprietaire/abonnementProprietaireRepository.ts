@@ -1,4 +1,4 @@
-import { Model, ModelStatic } from "sequelize";
+import { Model, ModelStatic, Op } from "sequelize";
 import { AbonnementProprietaire, AbonnementProprietaireCreationAttributes } from "../../database/models/abonnementProprietaire";
 import { NotFoundError } from "../../common/errors/index";
 import { User } from "../../database/models/user";
@@ -42,9 +42,9 @@ export class AbonnementProprietaireRepository {
     async updateStatut(id: string, statut: StatutAbonnementEnum) {
         const AbonnementProprietaire = await this.abonnementProprietaire.findByPk(id);
         if (!AbonnementProprietaire) throw new NotFoundError("AbonnementProprietaire");
-            await AbonnementProprietaire.update({ statut });
+        await AbonnementProprietaire.update({ statut });
         return AbonnementProprietaire;
-   }
+    }
 
     async updateAbonnementProprietaire(id: string, data: Partial<AbonnementProprietaireIdAttribute>) {
         const AbonnementProprietaire = await this.getAbonnementProprietaireById(id);
@@ -66,5 +66,32 @@ export class AbonnementProprietaireRepository {
 
         await AbonnementProprietaire.destroy();
         return true;
+    }
+
+    // ─── Expirer tous les abonnements dont finAt est dépassé ──────────────────
+    async expirerAbonnementsDepasses(): Promise<number> {
+        const [nbAffectes] = await this.abonnementProprietaire.update(
+            { statut: StatutAbonnementEnum.EXPIRE },
+            {
+                where: {
+                    statut: StatutAbonnementEnum.ACTIF,
+                    finAt: { [Op.lt]: new Date() }, // finAt < maintenant
+                },
+            }
+        );
+        return nbAffectes;
+    }
+
+    async getAbonnementByProprietaireId(proprietaireId: string) {
+        return this.abonnementProprietaire.findOne({
+            where: { proprietaireId: proprietaireId },
+            // include: [
+            //     {
+            //         model: User,
+            //         as: 'users',
+            //         where: { id: proprietaireId },
+            //     },
+            // ],
+        });
     }
 }

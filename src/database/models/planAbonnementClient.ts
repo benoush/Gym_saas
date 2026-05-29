@@ -1,30 +1,27 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
 import { typePlanAbonnementClient } from "../../enum/typePlanAbonnementClient";
+import { typePlanAbonnementProprietaire } from "enum/typePlanAbonnementProprietaire";
 
 export interface PlanAbonnementClientAttributes {
-  id: string;
-  salleId: string;
-  type: typePlanAbonnementClient;
-  prix: number;
-  description: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deleteAt?: Date
+    id: string;
+    type: typePlanAbonnementClient;
+    prix: number;
+    createdAt?: Date;
+    updatedAt?: Date;
+    deleteAt?: Date
 }
 
 export interface PlanAbonnementClientCreationAttributes extends Optional<PlanAbonnementClientAttributes, "id" | "createdAt" | "updatedAt" | "deleteAt"> { }
 
 
 export class PlanAbonnementClient extends Model<PlanAbonnementClientAttributes, PlanAbonnementClientCreationAttributes> implements PlanAbonnementClientAttributes {
-  declare id: string;
-  declare salleId: string;
-  declare type: typePlanAbonnementClient;
-  declare prix: number;
-  declare description: string;
-  declare createdAt: Date;
-  declare updatedAt: Date;
-  declare deleteAt: Date;
+    declare id: string;
+    declare type: typePlanAbonnementClient;
+    declare prix: number;
+    declare createdAt?: Date;
+    declare updatedAt?: Date;
+    declare deleteAt?: Date
   declare static associate: (models: any) => void;
 
 }
@@ -37,25 +34,21 @@ export const initModelPlanAbonnementClient = (sequelize: Sequelize) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      salleId: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        field: 'salleId',
-        references: {
-          model: 'salles',
-          key: 'id',
-        }
-      },
+      // salleId: {
+      //   type: DataTypes.UUID,
+      //   allowNull: false,
+      //   field: 'salleId',
+      //   references: {
+      //     model: 'salles',
+      //     key: 'id',
+      //   }
+      // },
       type: {
         type: DataTypes.ENUM(...Object.values(typePlanAbonnementClient)),
         allowNull: false,
       },
       prix: {
         type: DataTypes.DECIMAL(10, 2),
-        allowNull: false,
-      },
-      description: {
-        type: DataTypes.STRING,
         allowNull: false,
       },
       createdAt: DataTypes.DATE,

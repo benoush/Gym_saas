@@ -1,4 +1,5 @@
 export enum typeAbonnementSalle {
+    MENSUEL = "MENSUEL",
     HEBDOMADAIRE = "HEBDOMADAIRE",
     TRIMESTRIEL = "TRIMESTRIEL",
     SEMESTRIEL = "SEMESTRIEL",

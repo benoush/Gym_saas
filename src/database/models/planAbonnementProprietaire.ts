@@ -5,7 +5,6 @@ export interface PlanAbonnementProprietaireAttributes {
     id: string;
     type: typePlanAbonnementProprietaire;
     prix: number;
-    description: string;
     createdAt?: Date;
     updatedAt?: Date;
     deleteAt?: Date
@@ -18,10 +17,10 @@ export class PlanAbonnementProprietaire extends Model<PlanAbonnementProprietaire
     declare id: string;
     declare type: typePlanAbonnementProprietaire;
     declare prix: number;
-    declare description: string;
     declare createdAt: Date;
     declare updatedAt: Date;
     declare deleteAt: Date;
+    declare static associate: (models: any) => void;
 }
 
 export const initModelPlanAbonnementProprietaire = (sequelize: Sequelize) => {
@@ -40,10 +39,7 @@ export const initModelPlanAbonnementProprietaire = (sequelize: Sequelize) => {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
-      description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
       deleteAt: DataTypes.DATE
@@ -51,10 +47,17 @@ export const initModelPlanAbonnementProprietaire = (sequelize: Sequelize) => {
     {
       sequelize,
       modelName: "PlanAbonnementProprietaire",
-      tableName: "PlanAbonnementProprietaire",
+      tableName: "PlanAbonnementProprietaires",
       timestamps: true,
       underscored: true,
       paranoid: true,
     }
   );
 };
+
+PlanAbonnementProprietaire.associate = (models: any) => {
+  PlanAbonnementProprietaire.hasMany(models.AbonnementProprietaire, {
+    foreignKey: "planId",
+    as: "abonnementProprietaires",
+  });
+}

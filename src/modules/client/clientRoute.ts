@@ -10,8 +10,8 @@ const clientController = new ClientController();
 
 
 
-router.use(authMiddleware);
-router.post("",isStaff, uploadAvatar.single("photo"), validate(createClientSchema, "body"), clientController.createClient);
+// router.use(authMiddleware);
+router.post("", uploadAvatar.single("photo"), validate(createClientSchema, "body"), clientController.createClient);
 router.get("", validate(ClientPaginationSchema, "query"), clientController.getClientPaginated);
 router.get("/:id", validate(ClientIdSchema, "params"), clientController.getClientById);
 router.patch("/statut/:id",isStaff, validate(ClientIdSchema, "params"), validate(updateClientSchema, "body"), clientController.updateStatut);

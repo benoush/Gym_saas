@@ -9,11 +9,11 @@ const factureController = new FactureController();
 
 
 
-router.use(authMiddleware);
-router.post("",isProprietaire, validate(createFactureSchema, "body"), factureController.createFacture);
+// router.use(authMiddleware);
+router.post("", validate(createFactureSchema, "body"), factureController.createFacture);
 router.get("", validate(FacturePaginationSchema, "query"), factureController.getFacturePaginated);
 router.get("/:id", validate(FactureIdSchema, "params"), factureController.getFactureById);
-router.delete("/:id",isProprietaire, validate(FactureIdSchema, "params"), factureController.deleteFacture);
-router.patch("/:id",isProprietaire, validate(FactureIdSchema, "params"), validate(createFactureSchema, "body"), factureController.updateFacture);
+router.delete("/:id", validate(FactureIdSchema, "params"), factureController.deleteFacture);
+router.patch("/:id", validate(FactureIdSchema, "params"), validate(createFactureSchema, "body"), factureController.updateFacture);
 
 export default router;

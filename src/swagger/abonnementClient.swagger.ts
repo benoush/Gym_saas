@@ -10,17 +10,18 @@ const abonnementClientSchema: OpenAPIV3.ComponentsObject["schemas"] = {
     properties: {
       id: { type: "string", format: "uuid" },
       clientId: { type: "string", format: "uuid" },
+      planId: { type: "string", format: "uuid" },
       type: {
         type: "string",
         enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
       },
-      statut: {
-        type: "string",
-        enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
-      },
-      description: { type: "string" },
-      nbre_sceance: { type: "string" },
-      montant: { type: "string" },
+      // statut: {
+      //   type: "string",
+      //   enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
+      // },
+      // description: { type: "string" },
+      nbre_sceance: { type: "number" },
+      // montant: { type: "number" },
       debutAt: { type: "string", format: "date-time" },
       finAt: { type: "string", format: "date-time" },
       createdAt: { type: "string", format: "date-time" },
@@ -42,20 +43,21 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["clientId", "type", "statut", "description", "nbre_sceance", "montant"],
+              required: ["clientId", "planId", "type","nbre_sceance" ],
               properties: {
                 clientId: { type: "string", format: "uuid" },
+                planId: { type: "string", format: "uuid" },
                 type: {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
                 },
-                statut: {
-                  type: "string",
-                  enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
-                },
-                description: { type: "string", maxLength: 255 },
-                nbre_sceance: { type: "string" },
-                montant: { type: "string" },
+                // statut: {
+                //   type: "string",
+                //   enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
+                // },
+                // description: { type: "string", maxLength: 255 },
+                nbre_sceance: { type: "number" },
+                // montant: { type: "number" },
               },
             },
           },

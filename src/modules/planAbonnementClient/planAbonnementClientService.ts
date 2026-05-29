@@ -2,7 +2,7 @@
 import { PlanAbonnementClientCreationAttributes } from "../../database/models/planAbonnementClient";
 import { typePlanAbonnementClient } from "../../enum/typePlanAbonnementClient";
 import { PlanAbonnementClientRepository } from "./planAbonnementClientRepository";
-import { PlanAbonnementClientIdAttribute } from "./planAbonnementClientSchema";
+import { CreatePlanAbonnementClientAttribute, PlanAbonnementClientIdAttribute } from "./planAbonnementClientSchema";
 
 
 export class PlanAbonnementClientService {
@@ -11,7 +11,7 @@ export class PlanAbonnementClientService {
     constructor() {
         this.planAbonnementClientRepository = new PlanAbonnementClientRepository();
     }
-    async createPlanAbonnementClient(PlanAbonnementClientRequest: PlanAbonnementClientCreationAttributes) {
+    async createPlanAbonnementClient(PlanAbonnementClientRequest: CreatePlanAbonnementClientAttribute) {
         return await this.planAbonnementClientRepository.createPlanAbonnementClient(PlanAbonnementClientRequest);
     }
     async getPlanAbonnementClientById(id: string) {

@@ -6,7 +6,7 @@ const createPaiementSchema = z.object({
     factureId: z.coerce.string("factureId must be a string"),
     statut: z.nativeEnum(statutPaiement, {
         error: `Le statut doit être l'un des suivants : ${Object.values(statutPaiement).join(", ")}`,
-    }),
+    }).optional(),
     methode: z.nativeEnum(methodePaiement, {
         error: `La méthode de paiement doit être l'une des suivantes : ${Object.values(methodePaiement).join(", ")}`,
     }),
