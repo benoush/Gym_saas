@@ -1,8 +1,7 @@
-import { Model, ModelStatic, where } from "sequelize";
-import { Facture, FactureCreationAttributes } from "../../database/models/facture";
+import { FindOptions, Model, ModelStatic, where } from "sequelize";
+import { Facture, FactureAttributes, FactureCreationAttributes } from "../../database/models/facture";
 import { NotFoundError } from "../../common/errors/index";
-import { TypeFacture } from "enum/typeFacture";
-import { objectToInclude } from "../../common/include";
+
 
 export class FactureRepository {
     private facture: ModelStatic<Facture>
@@ -12,11 +11,11 @@ export class FactureRepository {
     }
 
     async createFacture(data: FactureCreationAttributes) {
-        return this.facture.create(data );
+        return this.facture.create(data);
     }
 
-    async getFactureById(id: string) {
-        return this.facture.findByPk(id, { include: objectToInclude });
+    async getFactureById(id: string, options?: Omit<FindOptions<FactureAttributes>, "where">) {
+        return this.facture.findByPk(id, options);
     }
 
 
@@ -24,16 +23,16 @@ export class FactureRepository {
         where: Record<string, unknown>
         offset: number;
         limit: number;
-        
-      }) {
-    const { offset, limit, where} = options;
+
+    }) {
+        const { offset, limit, where } = options;
 
         return this.facture.findAndCountAll({
-      where,
-      offset,
-      limit,
-      order: [["createdAt", "DESC"]],
-    });
+            where,
+            offset,
+            limit,
+            order: [["createdAt", "DESC"]],
+        });
     }
 
     async updateFacture(id: string, data: Partial<FactureCreationAttributes>) {
