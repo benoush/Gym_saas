@@ -13,7 +13,7 @@ export class AbonnementProprietaireRepository {
     }
 
     async createAbonnementProprietaire(data: AbonnementProprietaireCreationAttributes) {
-        return this.abonnementProprietaire.create(data as AbonnementProprietaire);
+        return this.abonnementProprietaire.create(data );
     }
 
     async getAbonnementProprietaireById(id: string) {

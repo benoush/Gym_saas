@@ -69,7 +69,7 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
                 defaultValue: StatutAbonnementEnum.INNACTIF
             },
             montant: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.DECIMAL(10, 2),
                 allowNull: false
             },
             finAt: {

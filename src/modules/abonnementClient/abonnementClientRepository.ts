@@ -13,7 +13,7 @@ export class AbonnementClientRepository {
     }
 
     async createAbonnementClient(data: AbonnementClientCreationAttributes) {
-        return this.abonnementClient.create(data as AbonnementClient);
+        return this.abonnementClient.create(data );
     }
 
     async getAbonnementClientById(id: string) {

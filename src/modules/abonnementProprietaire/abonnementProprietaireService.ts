@@ -9,15 +9,18 @@ import { Facture } from "database/models/facture";
 import { Proprietaire } from "database/models/proprietaire";
 import { SalleRepository } from "modules/salle/salleRepository";
 import { TypeFacture } from "enum/typeFacture";
+import { FactureRepository } from "modules/facture/factureRepository";
 
 
 export class AbonnementProprietaireService {
     private AbonnementProprietaireRepository: AbonnementProprietaireRepository;
     private PlanRepository: PlanAbonnementProprietaireRepository;
+    private factureRepository: FactureRepository;
 
     constructor() {
         this.AbonnementProprietaireRepository = new AbonnementProprietaireRepository();
         this.PlanRepository = new PlanAbonnementProprietaireRepository();
+        this.factureRepository = new FactureRepository();
     }
     async createAbonnementProprietaire(AbonnementProprietaireRequest: CreateAbonnementProprietaireAttribute) {
         let montant: number = 0;
@@ -74,7 +77,7 @@ export class AbonnementProprietaireService {
 
 
 
-        await Facture.create({
+        await this.factureRepository.createFacture({
             typeFacture: TypeFacture.PROPRIETAIRE,
             montant,
             proprietaireId: AbonnementProprietaireRequest.proprietaireId,

@@ -9,17 +9,20 @@ import { Facture } from "database/models/facture";
 import { typeAbonnementSalle } from "enum/typeAbonnementSalle";
 import { SalleRepository } from "modules/salle/salleRepository";
 import { TypeFacture } from "enum/typeFacture";
+import { FactureRepository } from "modules/facture/factureRepository";
 
 
 export class AbonnementClientService {
     private AbonnementClientRepository: AbonnementClientRepository;
     private PlanRepository: PlanAbonnementClientRepository; 
     private SalleRepository: SalleRepository; 
+    private factureRepository: FactureRepository;
     
     constructor() {
         this.AbonnementClientRepository = new AbonnementClientRepository();
         this.PlanRepository = new PlanAbonnementClientRepository();
         this.SalleRepository = new SalleRepository();
+        this.factureRepository = new FactureRepository();
     }
     async createAbonnementClient(abonnementClientRequest: CreateAbonnementClientAttribute) {
         let montant: number = 0;
@@ -82,7 +85,7 @@ if (!salle) {
 
 
 
-        await Facture.create({
+        await this.factureRepository.createFacture({
             typeFacture: TypeFacture.CLIENT,
             salleId: salle.id,
             montant,
@@ -99,7 +102,7 @@ if (!salle) {
             planId: abonnementClientRequest.planId,
             type: abonnementClientRequest.type,
             statut: StatutAbonnementEnum.INNACTIF,
-            nbre_sceance: 0,
+            nbre_sceance: abonnementClientRequest.nbre_sceance,
             montant: amount,
             finAt: dateFin
         });

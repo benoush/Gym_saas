@@ -79,7 +79,7 @@ const initModelAbonnementClient = (sequelize: Sequelize) => {
                 allowNull: false
             },
             montant: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.DECIMAL(10, 2),
                 allowNull: false
             },
             finAt: {

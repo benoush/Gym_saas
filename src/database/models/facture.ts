@@ -67,7 +67,7 @@ const initModelFacture = (sequelize: Sequelize) => {
       },
 
       montant: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
       },
 
