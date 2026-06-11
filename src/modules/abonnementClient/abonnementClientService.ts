@@ -99,6 +99,7 @@ if (!salle) {
         console.log("Montant calculé pour l'abonnement propriétaire :", typeof (amount));
         return await this.AbonnementClientRepository.createAbonnementClient({
             clientId: abonnementClientRequest.clientId,
+            salleId: salle.id,
             planId: abonnementClientRequest.planId,
             type: abonnementClientRequest.type,
             statut: StatutAbonnementEnum.INNACTIF,

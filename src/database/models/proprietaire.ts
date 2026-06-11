@@ -15,7 +15,7 @@ export interface ProprietaireAttributes {
 export interface ProprietaireCreationAttributes extends Optional<ProprietaireAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt"> { }
 
 
-export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireAttributes> implements ProprietaireAttributes {
+export class Proprietaire extends Model<ProprietaireAttributes, ProprietaireCreationAttributes> implements ProprietaireAttributes {
   declare id: string;
   declare userId: string;
   declare recto_carte_identite: string;
@@ -39,7 +39,6 @@ export const initModelProprietaire = (sequelize: Sequelize) => {
       userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'userId',
         references: {
           model: 'users',
           key: 'id',
@@ -76,5 +75,5 @@ Proprietaire.associate = (models: any) => {
   Proprietaire.hasMany(models.Facture, { foreignKey: 'proprietaireId', as: 'factures' });
   Proprietaire.hasMany(models.Salle, { foreignKey: 'proprietaireId', as: 'salles' });
   Proprietaire.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
-  Proprietaire.hasOne(models.AbonnementProprietaire, { foreignKey: 'proprietaireId', as: 'abonnementProprietaires' });
+  Proprietaire.hasMany(models.AbonnementProprietaire, { foreignKey: 'proprietaireId', as: 'abonnementProprietaires' });
 }

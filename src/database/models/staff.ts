@@ -33,7 +33,6 @@ const initModelStaff = (sequelize: Sequelize) => {
             salleId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'salleId',
                 references: {
                     model: 'salles',
                     key: 'id',
@@ -42,7 +41,6 @@ const initModelStaff = (sequelize: Sequelize) => {
             userId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'userId',
                 references: {
                     model: 'users',
                     key: 'id',

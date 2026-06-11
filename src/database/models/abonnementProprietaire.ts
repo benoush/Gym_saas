@@ -44,7 +44,6 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
             proprietaireId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'proprietaireId',
                 references: {
                     model: 'proprietaires',
                     key: 'id',
@@ -53,7 +52,6 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
             planId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'planId',
                 references: {
                     model: 'PlanAbonnementProprietaires',
                     key: 'id',
@@ -91,7 +89,7 @@ const initModelAbonnementProprietaire = (sequelize: Sequelize) => {
 AbonnementProprietaire.associate = (models: any) => {
     AbonnementProprietaire.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
     AbonnementProprietaire.belongsTo(models.PlanAbonnementProprietaire, { foreignKey: 'planId', as: 'planAbonnementProprietaires' });
-    AbonnementProprietaire.hasOne(models.Facture, { foreignKey: 'abonnementProprietaireId', as: 'factures' });
+    AbonnementProprietaire.hasMany(models.Facture, { foreignKey: 'abonnementProprietaireId', as: 'factures' });
 }
 
 export { AbonnementProprietaire, initModelAbonnementProprietaire };

@@ -1,7 +1,6 @@
 import { Model, Optional, DataTypes } from "sequelize";
 import { Sequelize } from "sequelize";
 import { typePlanAbonnementClient } from "../../enum/typePlanAbonnementClient";
-import { typePlanAbonnementProprietaire } from "enum/typePlanAbonnementProprietaire";
 
 export interface PlanAbonnementClientAttributes {
     id: string;
@@ -34,15 +33,6 @@ export const initModelPlanAbonnementClient = (sequelize: Sequelize) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      // salleId: {
-      //   type: DataTypes.UUID,
-      //   allowNull: false,
-      //   field: 'salleId',
-      //   references: {
-      //     model: 'salles',
-      //     key: 'id',
-      //   }
-      // },
       type: {
         type: DataTypes.ENUM(...Object.values(typePlanAbonnementClient)),
         allowNull: false,
@@ -67,5 +57,8 @@ export const initModelPlanAbonnementClient = (sequelize: Sequelize) => {
 };
 
 PlanAbonnementClient.associate = (models: any) => {
-  PlanAbonnementClient.belongsTo(models.Salle, { foreignKey: 'salleId', as: 'salles' });
+  PlanAbonnementClient.hasMany(models.AbonnementClient, {
+    foreignKey: 'planId',
+    as: 'abonnementClients',
+  });
 }

@@ -36,7 +36,6 @@ const initModelClient = (sequelize: Sequelize) => {
       userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'userId',
         references: {
           model: 'users',
           key: 'id',
@@ -63,7 +62,7 @@ const initModelClient = (sequelize: Sequelize) => {
 };
 
 Client.associate = (models: any) => {
-  Client.hasOne(models.AbonnementClient, { foreignKey: 'clientId', as: 'abonnementClients' });
+  Client.hasMany(models.AbonnementClient, { foreignKey: 'clientId', as: 'abonnementClients' });
   Client.belongsTo(models.User, { foreignKey: 'userId', as: 'users' });
   Client.hasMany(models.Facture, { foreignKey: 'clientId', as: 'factures' });
 }

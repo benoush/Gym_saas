@@ -32,7 +32,6 @@ const initModelNotification = (sequelize: Sequelize) => {
             userId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'userId',
                 references: {
                     model: 'users',
                     key: 'id',

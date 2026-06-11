@@ -38,7 +38,6 @@ const initModelPaiement = (sequelize: Sequelize) => {
             factureId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'factureId',
                 references: {
                     model: 'factures',
                     key: 'id',

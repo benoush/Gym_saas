@@ -37,7 +37,6 @@ const initModelSalle = (sequelize: Sequelize) => {
             proprietaireId: {
                 type: DataTypes.UUID,
                 allowNull: false,
-                field: 'proprietaireId',
                 references: {
                     model: 'proprietaires',
                     key: 'id',
@@ -73,9 +72,9 @@ const initModelSalle = (sequelize: Sequelize) => {
 
 
 Salle.associate = (models: any) => {
-    Salle.hasOne(models.Staff, { foreignKey: 'salleId', as: 'staffs' });
-    Salle.hasOne(models.Facture, { foreignKey: 'salleId', as: 'factures' });
-    Salle.hasOne(models.PlanSalle, { foreignKey: 'salleId', as: 'planSalles' });
+    Salle.hasMany(models.Staff, { foreignKey: 'salleId', as: 'staffs' });
+    Salle.hasMany(models.Facture, { foreignKey: 'salleId', as: 'factures' });
+    Salle.hasMany(models.AbonnementClient, { foreignKey: 'salleId', as: 'abonnementClients' });
     Salle.belongsTo(models.Proprietaire, { foreignKey: 'proprietaireId', as: 'proprietaires' });
 }
 
