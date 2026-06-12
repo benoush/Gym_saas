@@ -11,6 +11,7 @@ const abonnementClientSchema: OpenAPIV3.ComponentsObject["schemas"] = {
       id: { type: "string", format: "uuid" },
       clientId: { type: "string", format: "uuid" },
       planId: { type: "string", format: "uuid" },
+      salleId: { type: "string", format: "uuid" },
       type: {
         type: "string",
         enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
@@ -43,10 +44,11 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["clientId", "planId", "type","nbre_sceance" ],
+              required: ["clientId", "planId", "salleId", "type", "nbre_sceance"],
               properties: {
                 clientId: { type: "string", format: "uuid" },
                 planId: { type: "string", format: "uuid" },
+                salleId: { type: "string", format: "uuid" },
                 type: {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
@@ -189,7 +191,6 @@ const abonnementClientPath: OpenAPIV3.PathsObject = {
                 },
                 description: { type: "string", maxLength: 255 },
                 nbre_sceance: { type: "number", minimum: 0 },
-                montant: { type: "number", minimum: 0 },
               },
             },
           },

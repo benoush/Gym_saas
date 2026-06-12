@@ -16,11 +16,7 @@ const abonnementProprietaireSchema: OpenAPIV3.ComponentsObject["schemas"] = {
         enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
         description: "Type d'abonnement SaaS",
       },
-      statut: {
-        type: "string",
-        enum: ["SUSPENDU", "ACTIF", "RESILIE", "EXPIRE"],
-      },
-      montant: { type: "number" },
+    
       createdAt: { type: "string", format: "date-time" },
       updatedAt: { type: "string", format: "date-time" },
         finAt: { type: "string", format: "date-time" },
@@ -42,7 +38,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["proprietaireId", "planId", "type", "montant"],
+              required: ["proprietaireId", "planId", "type"],
               properties: {
                 proprietaireId: { type: "string", format: "uuid" },
                 planId: { type: "string", format: "uuid" },
@@ -50,7 +46,6 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
                 },
-                montant: { type: "number", minimum: 0 },
               },
             },
           },
@@ -175,7 +170,7 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["proprietaireId", "planId", "type", "montant"],
+              required: ["proprietaireId", "planId", "type"],
               properties: {
                 proprietaireId: { type: "string", format: "uuid" },
                 planId: { type: "string", format: "uuid" },
@@ -183,7 +178,6 @@ const abonnementProprietairePath: OpenAPIV3.PathsObject = {
                   type: "string",
                   enum: ["HEBDOMADAIRE", "TRIMESTRIEL", "SEMESTRIEL", "ANNUEL"],
                 },
-                montant: { type: "number", minimum: 0 },
               },
             },
           },

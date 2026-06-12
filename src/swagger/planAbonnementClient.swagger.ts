@@ -17,8 +17,6 @@ const planAbonnementClientSchema: OpenAPIV3.ComponentsObject["schemas"] = {
              description: "Type du plan abonnement client",
            },
            prix: { type: "number", format: "float" },
-           duree: { type: "number" },
-           uniteDuree: { type: "string", enum: ["JOURS", "MOIS", "ANNEES"] },
            createdAt: { type: "string", format: "date-time" },
            updatedAt: { type: "string", format: "date-time" },
            deleteAt: { type: "string", format: "date-time" },
@@ -39,19 +37,13 @@ const planAbonnementClientPath: OpenAPIV3.PathsObject = {
           "application/json": {
             schema: {
               type: "object",
-              required: ["clientId", "prix", "duree", "uniteDuree", "type"],
+              required: ["clientId", "prix", "type"],
               properties: {
                 type: { 
                   type: "string",
                   enum: ["BASIC", "PRO", "PREMIUM"],
                 },
                 prix: { type: "number", minimum: 0 },
-                duree: { type: "integer", minimum: 1 },
-                uniteDuree: {
-                  type: "string",
-                  enum: ["JOURS", "MOIS", "ANNEES"],
-                  description: "Unité de durée du plan abonnement client",
-                },
                 clientId: { type: "string", format: "uuid" },
               },
             },
