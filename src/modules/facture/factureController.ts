@@ -2,6 +2,7 @@ import { FactureService } from "./factureService";
 import { Request, Response } from "express";
 import { sendPaginated, sendSuccess } from "../../common/api.response"
 import { CreateFactureAttribute } from "./factureSchema";
+import { TypeFacture } from "../../enum/typeFacture";
 
 export class FactureController {
     private factureService: FactureService;
@@ -34,7 +35,12 @@ export class FactureController {
     getFacturePaginated = async (req: Request, res: Response) => {
         const page = parseInt(req.query.page as string) || 1;
         const limit = parseInt(req.query.limit as string) || 10;
-        const data = await this.factureService.getFacturePaginated(page, limit);
+        const typeFacture = req.query.typeFacture as TypeFacture | undefined;
+        const data = await this.factureService.getFacturePaginated({
+            page,
+            limit,
+            typeFacture,
+        });
         return res.send(
             {
                 page,

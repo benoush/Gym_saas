@@ -1,6 +1,9 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    // baseUrl est déprécié sous TS 6 mais encore fonctionnel ; on neutralise
+    // l'erreur TS5101 le temps d'une éventuelle migration vers "paths".
+    "ignoreDeprecations": "6.0",
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",

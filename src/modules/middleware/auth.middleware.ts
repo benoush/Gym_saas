@@ -34,7 +34,9 @@ export const authMiddleware = (
   const token = authHeader.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(token, env.JWT_SECRET) as JwtPayload;
+    const decoded = jwt.verify(token, env.JWT_SECRET, {
+      algorithms: ["HS256"],
+    }) as JwtPayload;
     req.user = decoded;
     next();
   } catch (error) {

@@ -1,7 +1,12 @@
 import bcrypt from "bcryptjs";
+import env from "../../config/env";
 
-/** Email du compte administrateur seedé — sert aussi de sentinelle d'idempotence. */
-export const ADMIN_EMAIL = "admin@gymsaas.com";
+/**
+ * Email du compte administrateur seedé — aligné sur la variable d'environnement
+ * `ADMIN_EMAIL` pour rester cohérent avec le bootstrap admin au démarrage.
+ * Sert aussi de sentinelle d'idempotence.
+ */
+export const ADMIN_EMAIL = env.ADMIN_EMAIL.toLowerCase().trim();
 
 /** Mot de passe en clair commun à tous les comptes seedés (DEV uniquement). */
 export const SEED_PASSWORD = "Password123!";

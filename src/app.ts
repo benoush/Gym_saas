@@ -74,7 +74,7 @@ app.use(`${API_PREFIX}/planAbonnementProprietaire`, planAbonnementProprietaireRo
 app.use(`${API_PREFIX}/facture`, factureRoute)
 app.use(`${API_PREFIX}/paiement`, paiementRoute)
 app.use(`${API_PREFIX}/notification`, notificationRoute)
-app.use(`${API_PREFIX}/auth`, require("./modules/auth/authRoute").default);
+app.use(`${API_PREFIX}/auth`, authRoute)
 
 // 404 handler
 app.use(notFoundHandler);

@@ -15,7 +15,20 @@ export interface EnvConfig {
   DB_LOGGING: boolean;
   JWT_SECRET: string;
   JWT_EXPIRES_IN: string;
+  // Durée de vie de l'access token JWT (format jsonwebtoken, ex. "15m")
+  JWT_ACCESS_EXPIRES_IN: string;
+  // Durée de vie d'un refresh token, en jours
+  JWT_REFRESH_EXPIRES_DAYS: number;
+  // Durée de validité d'un token de réinitialisation de mot de passe, en minutes
+  PASSWORD_RESET_EXPIRES_MIN: number;
 
+  // Compte administrateur par défaut (provisionné au démarrage)
+  ADMIN_EMAIL: string;
+  ADMIN_PASSWORD: string;
+  ADMIN_NOM: string;
+  ADMIN_PRENOM: string;
+  ADMIN_TEL: string;
+  ADMIN_SEXE: string;
 
   API_PREFIX?: string;
 }
@@ -66,7 +79,17 @@ export const env: EnvConfig = {
   API_PREFIX: getEnvVar("API_PREFIX", "/api"),
   JWT_SECRET: getEnvVar("JWT_SECRET"),
   JWT_EXPIRES_IN: getEnvVar("JWT_EXPIRES_IN", "7d"),
+  JWT_ACCESS_EXPIRES_IN: getEnvVar("JWT_ACCESS_EXPIRES_IN", "15m"),
+  JWT_REFRESH_EXPIRES_DAYS: getEnvVarNumber("JWT_REFRESH_EXPIRES_DAYS", 30),
+  PASSWORD_RESET_EXPIRES_MIN: getEnvVarNumber("PASSWORD_RESET_EXPIRES_MIN", 60),
 
+  //Admin par défaut
+  ADMIN_EMAIL: getEnvVar("ADMIN_EMAIL", "admin@gymsaas.com"),
+  ADMIN_PASSWORD: getEnvVar("ADMIN_PASSWORD", "ChangeMe123!"),
+  ADMIN_NOM: getEnvVar("ADMIN_NOM", "Root"),
+  ADMIN_PRENOM: getEnvVar("ADMIN_PRENOM", "Admin"),
+  ADMIN_TEL: getEnvVar("ADMIN_TEL", "+22890000000"),
+  ADMIN_SEXE: getEnvVar("ADMIN_SEXE", "Autre"),
 
 };
 

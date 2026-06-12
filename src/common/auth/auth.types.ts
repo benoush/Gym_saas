@@ -1,12 +1,14 @@
 import { RoleEnum } from "enum/roleEnum";
 import { Request } from "express";
 
-export interface AuthRequest extends Request {
-  user?: { userId: string; email: string, role: RoleEnum };
-}
-
+/** Charge utile signée dans le JWT et restituée par le middleware d'auth. */
 export interface JwtPayload {
   userId: string;
   email: string;
-  role: string;
+  role: RoleEnum;
+}
+
+/** Requête Express enrichie du user décodé depuis le JWT. */
+export interface AuthRequest extends Request {
+  user?: JwtPayload;
 }

@@ -12,12 +12,15 @@ export interface UserAttributes {
   sexe: string;
   password: string;
   role: RoleEnum;
+  /** Hash SHA-256 du token de réinitialisation de mot de passe (jamais le token brut). */
+  resetPasswordToken?: string | null;
+  resetPasswordExpires?: Date | null;
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date
 }
 
-export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt" | 'photo'> { }
+export interface UserCreationAttributes extends Optional<UserAttributes, "id" | "createdAt" | "updatedAt" | "deletedAt" | 'photo' | 'resetPasswordToken' | 'resetPasswordExpires'> { }
 
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
@@ -30,6 +33,8 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
   declare sexe: string;
   declare password: string;
   declare role: RoleEnum;
+  declare resetPasswordToken: string | null;
+  declare resetPasswordExpires: Date | null;
   declare createdAt: Date;
   declare updatedAt: Date;
   declare deletedAt: Date;
@@ -80,6 +85,14 @@ const initModelUser = (sequelize: Sequelize) => {
         type: DataTypes.ENUM(...Object.values(RoleEnum)),
         allowNull: false,
       },
+      resetPasswordToken: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
+      resetPasswordExpires: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE,
       deletedAt: DataTypes.DATE
@@ -100,6 +113,7 @@ User.associate = (models: any) => {
   User.hasOne(models.Client, { foreignKey: 'userId', as: 'clients' });
   User.hasOne(models.Staff, { foreignKey: 'userId', as: 'staffs' });
   User.hasMany(models.Notification, { foreignKey: 'userId', as: 'notifications' });
+  User.hasMany(models.RefreshToken, { foreignKey: 'userId', as: 'refreshTokens' });
 }
 
 export { User, initModelUser }

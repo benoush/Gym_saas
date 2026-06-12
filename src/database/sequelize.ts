@@ -13,6 +13,7 @@ import { initModelPaiement } from "./models/paiement";
 import { initModelSalle } from "./models/salle";
 import { initModelStaff } from "./models/staff";
 import { initModelUser, User } from "./models/user";
+import { initModelRefreshToken } from "./models/refreshToken";
 
 
 
@@ -61,6 +62,7 @@ const closeConnection = async () => {
 const initModels = async () => {
 
   initModelUser(sequelize)
+  initModelRefreshToken(sequelize)
   initModelProprietaire(sequelize)
   initModelSalle(sequelize)
   initModelClient(sequelize)
