@@ -676,7 +676,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="User" value="User" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="700" y="360" width="220" height="424" as="geometry" />
+          <mxGeometry x="40" y="560" width="220" height="424" as="geometry" />
         </mxCell>
         <mxCell id="User_a0" value="+ id : UUID" parent="User" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="220" height="26" as="geometry" />
@@ -727,7 +727,7 @@
           <mxGeometry y="398" width="220" height="26" as="geometry" />
         </mxCell>
         <mxCell id="RefreshToken" value="RefreshToken" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="700" y="40" width="200" height="242" as="geometry" />
+          <mxGeometry x="460" y="40" width="200" height="242" as="geometry" />
         </mxCell>
         <mxCell id="RefreshToken_a0" value="+ id : UUID" parent="RefreshToken" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="200" height="26" as="geometry" />
@@ -757,31 +757,31 @@
           <mxGeometry y="216" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification" value="Notification" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="1060" y="40" width="200" height="190" as="geometry" />
+          <mxGeometry x="460" y="330" width="210" height="190" as="geometry" />
         </mxCell>
         <mxCell id="Notification_a0" value="+ id : UUID" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="26" width="200" height="26" as="geometry" />
+          <mxGeometry y="26" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification_a1" value="+ userId : UUID" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="52" width="200" height="26" as="geometry" />
+          <mxGeometry y="52" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification_a2" value="+ notification_type : notificationType" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="78" width="200" height="26" as="geometry" />
+          <mxGeometry y="78" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification_a3" value="+ content : string" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="104" width="200" height="26" as="geometry" />
+          <mxGeometry y="104" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification_a4" value="+ sentAt : Date" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="130" width="200" height="26" as="geometry" />
+          <mxGeometry y="130" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Notification_sep" value="" parent="Notification" vertex="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;">
-          <mxGeometry y="156" width="200" height="8" as="geometry" />
+          <mxGeometry y="156" width="210" height="8" as="geometry" />
         </mxCell>
         <mxCell id="Notification_m" value="+ method(type): type" parent="Notification" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="164" width="200" height="26" as="geometry" />
+          <mxGeometry y="164" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Proprietaire" value="Proprietaire" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="320" y="760" width="240" height="268" as="geometry" />
+          <mxGeometry x="460" y="560" width="240" height="268" as="geometry" />
         </mxCell>
         <mxCell id="Proprietaire_a0" value="+ id : UUID" parent="Proprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="240" height="26" as="geometry" />
@@ -814,7 +814,7 @@
           <mxGeometry y="242" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Client" value="Client" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="700" y="760" width="200" height="216" as="geometry" />
+          <mxGeometry x="460" y="880" width="200" height="216" as="geometry" />
         </mxCell>
         <mxCell id="Client_a0" value="+ id : UUID" parent="Client" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="200" height="26" as="geometry" />
@@ -841,7 +841,7 @@
           <mxGeometry y="190" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Staff" value="Staff" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="1060" y="760" width="200" height="216" as="geometry" />
+          <mxGeometry x="460" y="1150" width="200" height="216" as="geometry" />
         </mxCell>
         <mxCell id="Staff_a0" value="+ id : UUID" parent="Staff" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="200" height="26" as="geometry" />
@@ -868,7 +868,7 @@
           <mxGeometry y="190" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Salle" value="Salle" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="1380" y="360" width="220" height="268" as="geometry" />
+          <mxGeometry x="900" y="560" width="220" height="268" as="geometry" />
         </mxCell>
         <mxCell id="Salle_a0" value="+ id : UUID" parent="Salle" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="220" height="26" as="geometry" />
@@ -900,8 +900,35 @@
         <mxCell id="Salle_m" value="+ method(type): type" parent="Salle" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="242" width="220" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="PlanAbonnementProprietaire" value="PlanAbonnementProprietaire" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
+          <mxGeometry x="900" y="40" width="240" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a0" value="+ id : UUID" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="26" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a1" value="+ type : typePlanAbonnementProprietaire" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="52" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a2" value="+ prix : number" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="78" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a3" value="+ createdAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="104" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a4" value="+ updatedAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="130" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_a5" value="+ deleteAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="156" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_sep" value="" parent="PlanAbonnementProprietaire" vertex="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;">
+          <mxGeometry y="182" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PlanAbonnementProprietaire_m" value="+ method(type): type" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+          <mxGeometry y="190" width="240" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="AbonnementProprietaire" value="AbonnementProprietaire" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="40" y="360" width="260" height="320" as="geometry" />
+          <mxGeometry x="900" y="920" width="260" height="320" as="geometry" />
         </mxCell>
         <mxCell id="AbonnementProprietaire_a0" value="+ id : UUID" parent="AbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="260" height="26" as="geometry" />
@@ -939,35 +966,35 @@
         <mxCell id="AbonnementProprietaire_m" value="+ method(type): type" parent="AbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="294" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire" value="PlanAbonnementProprietaire" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="40" y="40" width="240" height="216" as="geometry" />
+        <mxCell id="PlanAbonnementClient" value="PlanAbonnementClient" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
+          <mxGeometry x="560" y="1500" width="240" height="216" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a0" value="+ id : UUID" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a0" value="+ id : UUID" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a1" value="+ type : typePlanAbonnementProprietaire" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a1" value="+ type : typePlanAbonnementClient" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="52" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a2" value="+ prix : number" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a2" value="+ prix : number" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="78" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a3" value="+ createdAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a3" value="+ createdAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="104" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a4" value="+ updatedAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a4" value="+ updatedAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="130" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_a5" value="+ deleteAt : Date" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_a5" value="+ deleteAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="156" width="240" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_sep" value="" parent="PlanAbonnementProprietaire" vertex="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;">
+        <mxCell id="PlanAbonnementClient_sep" value="" parent="PlanAbonnementClient" vertex="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;">
           <mxGeometry y="182" width="240" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementProprietaire_m" value="+ method(type): type" parent="PlanAbonnementProprietaire" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
+        <mxCell id="PlanAbonnementClient_m" value="+ method(type): type" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="190" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="AbonnementClient" value="AbonnementClient" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="660" y="1180" width="260" height="372" as="geometry" />
+          <mxGeometry x="1320" y="980" width="260" height="372" as="geometry" />
         </mxCell>
         <mxCell id="AbonnementClient_a0" value="+ id : UUID" parent="AbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="260" height="26" as="geometry" />
@@ -1011,35 +1038,8 @@
         <mxCell id="AbonnementClient_m" value="+ method(type): type" parent="AbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="346" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="PlanAbonnementClient" value="PlanAbonnementClient" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="320" y="1180" width="240" height="216" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a0" value="+ id : UUID" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="26" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a1" value="+ type : typePlanAbonnementClient" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="52" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a2" value="+ prix : number" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="78" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a3" value="+ createdAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="104" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a4" value="+ updatedAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="130" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_a5" value="+ deleteAt : Date" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="156" width="240" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_sep" value="" parent="PlanAbonnementClient" vertex="1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;">
-          <mxGeometry y="182" width="240" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="PlanAbonnementClient_m" value="+ method(type): type" parent="PlanAbonnementClient" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
-          <mxGeometry y="190" width="240" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="Facture" value="Facture" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="1380" y="1000" width="260" height="346" as="geometry" />
+          <mxGeometry x="1780" y="560" width="260" height="346" as="geometry" />
         </mxCell>
         <mxCell id="Facture_a0" value="+ id : UUID" parent="Facture" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="260" height="26" as="geometry" />
@@ -1081,7 +1081,7 @@
           <mxGeometry y="320" width="260" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Paiement" value="Paiement" parent="1" vertex="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;">
-          <mxGeometry x="1720" y="1280" width="220" height="242" as="geometry" />
+          <mxGeometry x="2200" y="560" width="220" height="242" as="geometry" />
         </mxCell>
         <mxCell id="Paiement_a0" value="+ id : UUID" parent="Paiement" vertex="1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;">
           <mxGeometry y="26" width="220" height="26" as="geometry" />
@@ -1111,94 +1111,88 @@
           <mxGeometry y="216" width="220" height="26" as="geometry" />
         </mxCell>
         <mxCell id="RoleEnum" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;RoleEnum&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="1060" y="360" width="160" height="144" as="geometry" />
+          <mxGeometry x="-220" y="600" width="170" height="144" as="geometry" />
         </mxCell>
         <mxCell id="RoleEnum_v0" value="ADMIN" parent="RoleEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="RoleEnum_v1" value="CLIENT" parent="RoleEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="RoleEnum_v2" value="PROPRIETAIRE" parent="RoleEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="160" height="26" as="geometry" />
+          <mxGeometry y="92" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="RoleEnum_v3" value="STAFF" parent="RoleEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="160" height="26" as="geometry" />
+          <mxGeometry y="118" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="notificationType" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;notificationType&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="1320" y="40" width="160" height="144" as="geometry" />
+          <mxGeometry x="720" y="330" width="170" height="144" as="geometry" />
         </mxCell>
         <mxCell id="notificationType_v0" value="INFO" parent="notificationType" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="notificationType_v1" value="ALERTE" parent="notificationType" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="notificationType_v2" value="RAPPEL" parent="notificationType" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="160" height="26" as="geometry" />
+          <mxGeometry y="92" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="notificationType_v3" value="PROMOTION" parent="notificationType" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="160" height="26" as="geometry" />
+          <mxGeometry y="118" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutClient" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;statutClient&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="700" y="1040" width="160" height="118" as="geometry" />
+          <mxGeometry x="40" y="1240" width="170" height="118" as="geometry" />
         </mxCell>
         <mxCell id="statutClient_v0" value="ACTIF" parent="statutClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutClient_v1" value="INACTIF" parent="statutClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutClient_v2" value="SUSPENDU" parent="statutClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="160" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;StatutAbonnementEnum&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="-300" y="360" width="200" height="170" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum_v0" value="SUSPENDU" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum_v1" value="INACTIF" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum_v2" value="ACTIF" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum_v3" value="RESILIE" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="StatutAbonnementEnum_v4" value="EXPIRE" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="144" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="typeAbonnementSaas" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typeAbonnementSaas&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="-300" y="40" width="200" height="144" as="geometry" />
-        </mxCell>
-        <mxCell id="typeAbonnementSaas_v0" value="MENSUEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="typeAbonnementSaas_v1" value="TRIMESTRIEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="typeAbonnementSaas_v2" value="SEMESTRIEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="200" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="typeAbonnementSaas_v3" value="ANNUEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="200" height="26" as="geometry" />
+          <mxGeometry y="92" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="typePlanAbonnementProprietaire" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typePlanAbonnementProprietaire&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="-300" y="700" width="220" height="118" as="geometry" />
+          <mxGeometry x="1220" y="40" width="240" height="118" as="geometry" />
         </mxCell>
         <mxCell id="typePlanAbonnementProprietaire_v0" value="BASIC" parent="typePlanAbonnementProprietaire" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="220" height="26" as="geometry" />
+          <mxGeometry y="40" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="typePlanAbonnementProprietaire_v1" value="PRO" parent="typePlanAbonnementProprietaire" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="220" height="26" as="geometry" />
+          <mxGeometry y="66" width="240" height="26" as="geometry" />
         </mxCell>
         <mxCell id="typePlanAbonnementProprietaire_v2" value="PREMIUM" parent="typePlanAbonnementProprietaire" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="220" height="26" as="geometry" />
+          <mxGeometry y="92" width="240" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typeAbonnementSaas" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typeAbonnementSaas&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
+          <mxGeometry x="900" y="1300" width="180" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="typeAbonnementSaas_v0" value="MENSUEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="40" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typeAbonnementSaas_v1" value="TRIMESTRIEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="66" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typeAbonnementSaas_v2" value="SEMESTRIEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="92" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typeAbonnementSaas_v3" value="ANNUEL" parent="typeAbonnementSaas" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="118" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typePlanAbonnementClient" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typePlanAbonnementClient&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
+          <mxGeometry x="300" y="1500" width="210" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="typePlanAbonnementClient_v0" value="BASIC" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="40" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typePlanAbonnementClient_v1" value="PRO" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="66" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="typePlanAbonnementClient_v2" value="PREMIUM" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="92" width="210" height="26" as="geometry" />
         </mxCell>
         <mxCell id="typeAbonnementSalle" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typeAbonnementSalle&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="320" y="1560" width="180" height="170" as="geometry" />
+          <mxGeometry x="1320" y="1420" width="180" height="170" as="geometry" />
         </mxCell>
         <mxCell id="typeAbonnementSalle_v0" value="MENSUEL" parent="typeAbonnementSalle" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
           <mxGeometry y="40" width="180" height="26" as="geometry" />
@@ -1215,254 +1209,348 @@
         <mxCell id="typeAbonnementSalle_v4" value="ANNUEL" parent="typeAbonnementSalle" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
           <mxGeometry y="144" width="180" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="typePlanAbonnementClient" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;typePlanAbonnementClient&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="40" y="1180" width="200" height="118" as="geometry" />
+        <mxCell id="StatutAbonnementEnum" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;StatutAbonnementEnum&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
+          <mxGeometry x="1600" y="1420" width="200" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="typePlanAbonnementClient_v0" value="BASIC" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+        <mxCell id="StatutAbonnementEnum_v0" value="SUSPENDU" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
           <mxGeometry y="40" width="200" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="typePlanAbonnementClient_v1" value="PRO" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+        <mxCell id="StatutAbonnementEnum_v1" value="INACTIF" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
           <mxGeometry y="66" width="200" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="typePlanAbonnementClient_v2" value="PREMIUM" parent="typePlanAbonnementClient" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+        <mxCell id="StatutAbonnementEnum_v2" value="ACTIF" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
           <mxGeometry y="92" width="200" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="StatutAbonnementEnum_v3" value="RESILIE" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="118" width="200" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="StatutAbonnementEnum_v4" value="EXPIRE" parent="StatutAbonnementEnum" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
+          <mxGeometry y="144" width="200" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="TypeFacture" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;TypeFacture&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="1700" y="1000" width="160" height="92" as="geometry" />
+          <mxGeometry x="1780" y="960" width="170" height="92" as="geometry" />
         </mxCell>
         <mxCell id="TypeFacture_v0" value="CLIENT" parent="TypeFacture" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="TypeFacture_v1" value="PROPRIETAIRE" parent="TypeFacture" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="170" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutPaiement" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;statutPaiement&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="2000" y="1280" width="160" height="144" as="geometry" />
+          <mxGeometry x="2200" y="360" width="180" height="144" as="geometry" />
         </mxCell>
         <mxCell id="statutPaiement_v0" value="EN_ATTENTE" parent="statutPaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutPaiement_v1" value="PAYE" parent="statutPaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutPaiement_v2" value="ECHOUE" parent="statutPaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="160" height="26" as="geometry" />
+          <mxGeometry y="92" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="statutPaiement_v3" value="REMBOURSE" parent="statutPaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="160" height="26" as="geometry" />
+          <mxGeometry y="118" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="methodePaiement" value="&lt;&lt;ENUM&gt;&gt;&lt;br&gt;&lt;b&gt;methodePaiement&lt;/b&gt;" parent="1" vertex="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#FFF2CC;strokeColor=#D6B656;">
-          <mxGeometry x="2000" y="1500" width="160" height="144" as="geometry" />
+          <mxGeometry x="2480" y="560" width="180" height="144" as="geometry" />
         </mxCell>
         <mxCell id="methodePaiement_v0" value="MOBILE_MONEY" parent="methodePaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="40" width="160" height="26" as="geometry" />
+          <mxGeometry y="40" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="methodePaiement_v1" value="CARTE" parent="methodePaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="66" width="160" height="26" as="geometry" />
+          <mxGeometry y="66" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="methodePaiement_v2" value="ESPECES" parent="methodePaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="92" width="160" height="26" as="geometry" />
+          <mxGeometry y="92" width="180" height="26" as="geometry" />
         </mxCell>
         <mxCell id="methodePaiement_v3" value="VIREMENT" parent="methodePaiement" vertex="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;">
-          <mxGeometry y="118" width="160" height="26" as="geometry" />
+          <mxGeometry y="118" width="180" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="e0" parent="1" source="User" target="Proprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="E0" parent="1" source="User" target="Proprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e0_s" value="1" parent="e0" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E0_s" value="1" parent="E0" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e0_t" value="0..1" parent="e0" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E0_t" value="0..1" parent="E0" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e1" parent="1" source="User" target="Client" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="E1" parent="1" source="User" target="Client" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e1_s" value="1" parent="e1" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E1_s" value="1" parent="E1" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e1_t" value="0..1" parent="e1" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E1_t" value="0..1" parent="E1" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e2" parent="1" source="User" target="Staff" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="E2" parent="1" source="User" target="Staff" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e2_s" value="1" parent="e2" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E2_s" value="1" parent="E2" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e2_t" value="0..1" parent="e2" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E2_t" value="0..1" parent="E2" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e3" parent="1" source="User" target="Notification" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="E3" parent="1" source="User" target="Notification" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e3_s" value="1" parent="e3" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E3_s" value="1" parent="E3" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E3_t" value="0..*" parent="E3" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E4" parent="1" source="User" target="RefreshToken" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e3_t" value="0..*" parent="e3" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        <mxCell id="E4_s" value="1" parent="E4" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="e4" parent="1" source="User" target="RefreshToken" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e4_s" value="1" parent="e4" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e4_t" value="0..*" parent="e4" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e5" parent="1" source="Proprietaire" target="Salle" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e5_s" value="1" parent="e5" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e5_t" value="0..*" parent="e5" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e6" parent="1" source="Proprietaire" target="AbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e6_s" value="1" parent="e6" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e6_t" value="0..*" parent="e6" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e7" parent="1" source="Proprietaire" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e7_s" value="1" parent="e7" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e7_t" value="0..*" parent="e7" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e8" parent="1" source="Salle" target="Staff" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e8_s" value="1" parent="e8" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e8_t" value="0..*" parent="e8" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e9" parent="1" source="Salle" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e9_s" value="1" parent="e9" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e9_t" value="0..*" parent="e9" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e10" parent="1" source="Salle" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e10_s" value="1" parent="e10" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e10_t" value="0..*" parent="e10" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e11" parent="1" source="Client" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e11_s" value="1" parent="e11" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e11_t" value="0..*" parent="e11" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e12" parent="1" source="Client" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e12_s" value="1" parent="e12" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e12_t" value="0..*" parent="e12" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e13" parent="1" source="PlanAbonnementClient" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e13_s" value="1" parent="e13" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e13_t" value="0..*" parent="e13" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e14" parent="1" source="PlanAbonnementProprietaire" target="AbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e14_s" value="1" parent="e14" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e14_t" value="0..*" parent="e14" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e15" parent="1" source="AbonnementClient" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e15_s" value="1" parent="e15" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e15_t" value="0..*" parent="e15" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e16" parent="1" source="AbonnementProprietaire" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e16_s" value="1" parent="e16" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e16_t" value="0..*" parent="e16" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e17" parent="1" source="Facture" target="Paiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e17_s" value="1" parent="e17" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="-0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="e17_t" value="0..*" parent="e17" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];">
-          <mxGeometry x="0.8" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="d18" parent="1" source="User" target="RoleEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d19" parent="1" source="Client" target="statutClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d20" parent="1" source="Notification" target="notificationType" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d21" parent="1" source="AbonnementClient" target="typeAbonnementSalle" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d22" parent="1" source="AbonnementClient" target="StatutAbonnementEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d23" parent="1" source="AbonnementProprietaire" target="typeAbonnementSaas" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d24" parent="1" source="AbonnementProprietaire" target="StatutAbonnementEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d25" parent="1" source="PlanAbonnementClient" target="typePlanAbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d26" parent="1" source="PlanAbonnementProprietaire" target="typePlanAbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d27" parent="1" source="Facture" target="TypeFacture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d28" parent="1" source="Paiement" target="statutPaiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="d29" parent="1" source="Paiement" target="methodePaiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;strokeColor=#999999;">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="E4_t" value="0..*" parent="E4" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E5" parent="1" source="Proprietaire" target="Salle" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E5_s" value="1" parent="E5" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E5_t" value="0..*" parent="E5" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E6" parent="1" source="Proprietaire" target="AbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.97;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="820" />
+              <mxPoint x="820" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E6_s" value="1" parent="E6" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E6_t" value="0..*" parent="E6" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E7" parent="1" source="Proprietaire" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="535" />
+              <mxPoint x="1910" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E7_s" value="1" parent="E7" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E7_t" value="0..*" parent="E7" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E8" parent="1" source="Salle" target="Staff" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="640" />
+              <mxPoint x="780" y="1258" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E8_s" value="1" parent="E8" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E8_t" value="0..*" parent="E8" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E9" parent="1" source="Salle" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="700" />
+              <mxPoint x="1240" y="1166" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E9_s" value="1" parent="E9" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E9_t" value="0..*" parent="E9" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E10" parent="1" source="Salle" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.45;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1450" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E10_s" value="1" parent="E10" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E10_t" value="0..*" parent="E10" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E11" parent="1" source="Client" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.09;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="899" />
+              <mxPoint x="1290" y="1166" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E11_s" value="1" parent="E11" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E11_t" value="0..*" parent="E11" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E12" parent="1" source="Client" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.025;exitDx=0;exitDy=0;entryX=0;entryY=0.69;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1300" y="885" />
+              <mxPoint x="1740" y="885" />
+              <mxPoint x="1740" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E12_s" value="1" parent="E12" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E12_t" value="0..*" parent="E12" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E13" parent="1" source="PlanAbonnementClient" target="AbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.91;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1290" y="1608" />
+              <mxPoint x="1290" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E13_s" value="1" parent="E13" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E13_t" value="0..*" parent="E13" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E14" parent="1" source="PlanAbonnementProprietaire" target="AbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="148" />
+              <mxPoint x="1180" y="890" />
+              <mxPoint x="1030" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E14_s" value="1" parent="E14" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E14_t" value="0..*" parent="E14" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E15" parent="1" source="AbonnementClient" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.58;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1700" y="1166" />
+              <mxPoint x="1700" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E15_s" value="1" parent="E15" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E15_t" value="0..*" parent="E15" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E16" parent="1" source="AbonnementProprietaire" target="Facture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=0.92;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.52;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1390" />
+              <mxPoint x="1700" y="1390" />
+              <mxPoint x="1700" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E16_s" value="1" parent="E16" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E16_t" value="0..*" parent="E16" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E17" parent="1" source="Facture" target="Paiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E17_s" value="1" parent="E17" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="-0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E17_t" value="0..*" parent="E17" connectable="0" vertex="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;">
+          <mxGeometry x="0.75" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="E18" parent="1" source="User" target="RoleEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0;exitY=0.4;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E19" parent="1" source="Notification" target="notificationType" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E20" parent="1" source="Client" target="statutClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0;exitY=0.6;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="1000" />
+              <mxPoint x="330" y="1299" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E21" parent="1" source="AbonnementClient" target="typeAbonnementSalle" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E22" parent="1" source="AbonnementClient" target="StatutAbonnementEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1502" y="1400" />
+              <mxPoint x="1700" y="1400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E23" parent="1" source="AbonnementProprietaire" target="typeAbonnementSaas" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E24" parent="1" source="AbonnementProprietaire" target="StatutAbonnementEnum" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1121" y="1660" />
+              <mxPoint x="1700" y="1660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E25" parent="1" source="PlanAbonnementProprietaire" target="typePlanAbonnementProprietaire" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E26" parent="1" source="PlanAbonnementClient" target="typePlanAbonnementClient" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E27" parent="1" source="Facture" target="TypeFacture" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E28" parent="1" source="Paiement" target="statutPaiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E29" parent="1" source="Paiement" target="methodePaiement" edge="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9673A6;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;jettySize=auto;orthogonalLoop=1;">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
