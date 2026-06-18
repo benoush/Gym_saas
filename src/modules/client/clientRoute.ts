@@ -7,10 +7,7 @@ import { uploadAvatar } from "config/multer";
 
 const router: Router = Router();
 const clientController = new ClientController();
-
-
-
-// router.use(authMiddleware);
+router.use(authMiddleware);
 router.post("", uploadAvatar.single("photo"), validate(createClientSchema, "body"), clientController.createClient);
 router.get("", validate(ClientPaginationSchema, "query"), clientController.getClientPaginated);
 router.get("/:id", validate(ClientIdSchema, "params"), clientController.getClientById);
