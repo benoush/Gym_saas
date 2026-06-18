@@ -10,6 +10,20 @@ const clientSchema: OpenAPIV3.ComponentsObject["schemas"] = {
     properties: {
       id: { type: "string", format: "uuid" },
       userId: { type: "string", format: "uuid" },
+      users: {
+        properties: {
+          id: { type: "string", format: "uuid" },
+          photo: { type: "string" },
+          nom: { type: "string" },
+          prenom: { type: "string" },
+          email: { type: "string", format: "email" },
+          tel: { type: "string" },
+          sexe: { type: "string" },
+          role: { type: "string" },
+          createdAt: { type: "string", format: "date-time" },
+          updatedAt: { type: "string", format: "date-time" },
+        },
+      },
       statut: {
         type: "string",
         enum: ["ACTIF", "INACTIF", "SUSPENDU"],
@@ -42,7 +56,7 @@ const clientPath: OpenAPIV3.PathsObject = {
                 "tel",
                 "sexe",
                 "password",
-                "statut"
+                "statut",
               ],
               properties: {
                 photo: { type: "string", format: "binary" },
@@ -57,7 +71,6 @@ const clientPath: OpenAPIV3.PathsObject = {
                 tel: { type: "string" },
                 sexe: { type: "string" },
                 password: { type: "string" },
-
               },
             },
           },
@@ -193,39 +206,39 @@ const clientPath: OpenAPIV3.PathsObject = {
     },
   },
 
-//   "/client/user/{userId}": {
-//     get: {
-//       tags: ["Client"],
-//       summary: "Get client by userId",
-//       description: "Retrieve a client by their associated userId",
-//       parameters: [
-//         {
-//           name: "userId",
-//           in: "path",
-//           required: true,
-//           schema: { type: "string", format: "uuid" },
-//           description: "The userId associated with the client",
-//         },
-//       ],
-//       responses: {
-//         "200": {
-//           description: "Client found",
-//           content: {
-//             "application/json": {
-//               schema: {
-//                 type: "object",
-//                 properties: {
-//                   success: { type: "boolean" },
-//                   data: { $ref: "#/components/schemas/ClientResponse" },
-//                 },
-//               },
-//             },
-//           },
-//         },
-//         "404": { description: "Client not found" },
-//       },
-//     },
-//   },
+  //   "/client/user/{userId}": {
+  //     get: {
+  //       tags: ["Client"],
+  //       summary: "Get client by userId",
+  //       description: "Retrieve a client by their associated userId",
+  //       parameters: [
+  //         {
+  //           name: "userId",
+  //           in: "path",
+  //           required: true,
+  //           schema: { type: "string", format: "uuid" },
+  //           description: "The userId associated with the client",
+  //         },
+  //       ],
+  //       responses: {
+  //         "200": {
+  //           description: "Client found",
+  //           content: {
+  //             "application/json": {
+  //               schema: {
+  //                 type: "object",
+  //                 properties: {
+  //                   success: { type: "boolean" },
+  //                   data: { $ref: "#/components/schemas/ClientResponse" },
+  //                 },
+  //               },
+  //             },
+  //           },
+  //         },
+  //         "404": { description: "Client not found" },
+  //       },
+  //     },
+  //   },
 
   "/client/{id}/statut": {
     patch: {
